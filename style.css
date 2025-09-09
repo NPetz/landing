@@ -6,7 +6,16 @@
 
 #services div {
   background-image: none;
-  &:hover {
-    background-image: url(/image.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  &:nth-child(1):hover {
+    background-image: url(/apps.png);
+  }
+  &:nth-child(2):hover {
+    background-image: url(/websites.png);
+  }
+  &:nth-child(3):hover {
+    background-image: url(/aiandml.png);
   }
 }

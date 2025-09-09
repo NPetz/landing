@@ -6,6 +6,14 @@
     <title>Giuliano Masucci || Web Developer</title>
 
     <link href="./output.css" rel="stylesheet" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+        }
+      }
+    </script>
     <script type="module" src="main.mjs"></script>
   </head>
 
@@ -15,28 +23,27 @@
     >
       <!-- Hero Section -->
       <section class="snap-center h-dvh p-4 grid" id="hero">
+        <canvas
+          id="caustics-canvas"
+          class="col-start-1 row-start-1 w-full h-full rounded-lg"
+        ></canvas>
         <h1
-          class="bubble-text select-none pointer-events-none text-5xl md:text-7xl lg:text-9xl font-serif font-extrabold col-start-1 row-start-1 p-4 text-shadow-md text-shadow-white"
+          class="bubble-text select-none pointer-events-none text-5xl md:text-7xl lg:text-9xl font-serif font-extrabold col-start-1 row-start-1 p-4 text-shadow-md text-shadow-white z-10"
         >
           GIULIANO MASUCCI
         </h1>
-        <img
-          class="pointer-events-none object-cover w-full h-full overflow-hidden rounded-lg col-start-1 row-start-1 object-right"
-          src="image.png"
-          alt="idyllic valley in a hopefully not too distant future"
-        />
       </section>
 
       <!-- What I Do For You Section -->
       <section
-        class="snap-center h-dvh p-4 flex flex-col md:flex-row"
+        class="snap-center h-dvh p-4 flex flex-col md:flex-row gap-4"
         id="services"
       >
         <div
-          class="group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
+          class="bg-amber-100 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
         >
           <svg
-            class="col-start-1 row-start-1 p-4 group-hover:animate-[spin_5s_linear_infinite_reverse] max-w-40"
+            class="p-4 group-hover:animate-[spin_5s_linear_infinite_reverse] max-w-40"
             viewBox="0 0 100 100"
           >
             <path
@@ -50,15 +57,12 @@
               <textPath href="#curve">MOBILE APPS</textPath>
             </text>
           </svg>
-          <span class="z-10 col-start-1 row-start-1 text-4xl grid items-center"
-            >📱</span
-          >
         </div>
         <div
-          class="group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
+          class="bg-amber-100 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
         >
           <svg
-            class="col-start-1 row-start-1 p-4 group-hover:animate-[spin_5s_linear_infinite_reverse] max-w-40"
+            class="p-4 group-hover:animate-[spin_5s_linear_infinite_reverse] max-w-40"
             viewBox="0 0 100 100"
           >
             <path
@@ -71,15 +75,12 @@
               <textPath href="#curve">WEB APPS & WEBSITES</textPath>
             </text>
           </svg>
-          <span class="z-10 col-start-1 row-start-1 text-4xl grid items-center"
-            >🌐</span
-          >
         </div>
         <div
-          class="group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
+          class="bg-amber-100 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
         >
           <svg
-            class="col-start-1 row-start-1 p-4 group-hover:animate-[spin_5s_linear_infinite_reverse] max-w-40"
+            class="p-4 group-hover:animate-[spin_5s_linear_infinite_reverse] max-w-40"
             viewBox="0 0 100 100"
           >
             <path
@@ -93,9 +94,6 @@
               <textPath textLength="100" href="#curve">AI & ML</textPath>
             </text>
           </svg>
-          <span class="z-10 col-start-1 row-start-1 text-4xl grid items-center"
-            >🧠</span
-          >
         </div>
       </section>
 
