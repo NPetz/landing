@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giuliano Masucci || Web Developer</title>
+
+    <link href="./output.css" rel="stylesheet" />
+    <script type="module" src="main.mjs"></script>
+  </head>
+
+  <body>
+    <main
+      class="snap-y snap-mandatory h-dvh overflow-y-scroll overflow-x-hidden bg-amber-50"
+    >
+      <!-- Hero Section -->
+      <section class="snap-center h-dvh p-4 grid" id="hero">
+        <h1
+          class="bubble-text select-none pointer-events-none text-5xl md:text-7xl lg:text-9xl font-serif font-extrabold col-start-1 row-start-1 p-4 text-shadow-md text-shadow-white"
+        >
+          GIULIANO MASUCCI
+        </h1>
+        <img
+          class="pointer-events-none object-cover w-full h-full overflow-hidden rounded-lg col-start-1 row-start-1 object-right"
+          src="image.png"
+          alt="idyllic valley in a hopefully not too distant future"
+        />
+      </section>
+
+      <!-- What I Do For You Section -->
+      <section
+        class="snap-center h-dvh p-4 flex flex-col md:flex-row"
+        id="services"
+      >
+        <div
+          class="group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
+        >
+          <svg
+            class="col-start-1 row-start-1 p-4 group-hover:animate-[spin_5s_linear_infinite_reverse] max-w-40"
+            viewBox="0 0 100 100"
+          >
+            <path
+              id="curve"
+              d="M 0 50 A 50 50 0 0 0 100 50 M 100 50 A 50 50 0 0 0 0 50"
+              fill="transparent"
+            />
+            <circle cx="50" cy="50" r="30" class="fill-red-500" />
+
+            <text class="text-xl font-bold">
+              <textPath href="#curve">MOBILE APPS</textPath>
+            </text>
+          </svg>
+          <span class="z-10 col-start-1 row-start-1 text-4xl grid items-center"
+            >📱</span
+          >
+        </div>
+        <div
+          class="group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
+        >
+          <svg
+            class="col-start-1 row-start-1 p-4 group-hover:animate-[spin_5s_linear_infinite_reverse] max-w-40"
+            viewBox="0 0 100 100"
+          >
+            <path
+              id="curve"
+              d="M 0 50 A 50 50 0 0 0 100 50 M 100 50 A 50 50 0 0 0 0 50"
+              fill="transparent"
+            />
+            <circle cx="50" cy="50" r="30" class="fill-green-500" />
+            <text class="text-xl font-bold">
+              <textPath href="#curve">WEB APPS & WEBSITES</textPath>
+            </text>
+          </svg>
+          <span class="z-10 col-start-1 row-start-1 text-4xl grid items-center"
+            >🌐</span
+          >
+        </div>
+        <div
+          class="group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
+        >
+          <svg
+            class="col-start-1 row-start-1 p-4 group-hover:animate-[spin_5s_linear_infinite_reverse] max-w-40"
+            viewBox="0 0 100 100"
+          >
+            <path
+              id="curve"
+              d="M 0 50 A 50 50 0 0 0 100 50 M 100 50 A 50 50 0 0 0 0 50"
+              fill="transparent"
+            />
+            <circle cx="50" cy="50" r="30" class="fill-blue-500" />
+
+            <text class="text-xl font-bold">
+              <textPath textLength="100" href="#curve">AI & ML</textPath>
+            </text>
+          </svg>
+          <span class="z-10 col-start-1 row-start-1 text-4xl grid items-center"
+            >🧠</span
+          >
+        </div>
+      </section>
+
+      <!-- Project Showcase Section -->
+      <section
+        class="snap-center h-dvh snap-x snap-mandatory flex overflow-x-scroll w-full"
+        id="projects"
+      >
+        <div class="min-w-dvw snap-start p-4">
+          <img
+            class="rounded-lg object-cover w-full h-full"
+            src="image.png"
+            alt=""
+          />
+        </div>
+        <div class="min-w-dvw snap-start p-4">
+          <img
+            class="rounded-lg object-cover w-full h-full"
+            src="image.png"
+            alt=""
+          />
+        </div>
+        <div class="min-w-dvw snap-start p-4">
+          <img
+            class="rounded-lg object-cover w-full h-full"
+            src="image.png"
+            alt=""
+          />
+        </div>
+        <div class="min-w-dvw snap-start p-4">
+          <img
+            class="rounded-lg object-cover w-full h-full"
+            src="image.png"
+            alt=""
+          />
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="snap-center h-dvh p-4" id="contact">
+        <h2>Contant me to build your project, or to join your team</h2>
+        <div>GOOGLE FORM</div>
+      </section>
+    </main>
+  </body>
+
+  <!-- FILTER EFFECTS -->
+
+  <svg class="hidden">
+    <filter id="bubble">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.02 0.04"
+        numOctaves="6"
+        seed="4"
+        stitchTiles="stitch"
+        result="turbulence"
+      />
+      <feColorMatrix
+        type="matrix"
+        values="1 0 0 0 0
+0 1 0 0 0
+0 0 1 0 0
+0 0 0 0 1"
+        in="turbulence"
+        result="colormatrix"
+      />
+      <feColorMatrix
+        type="saturate"
+        values="1"
+        in="colormatrix"
+        result="colormatrix1"
+      />
+      <feGaussianBlur
+        stdDeviation="3 5"
+        in="componentTransfer"
+        edgeMode="none"
+        result="blur"
+      />
+      <feComponentTransfer in="composite" result="componentTransfer">
+        <feFuncR type="table" tableValues="3 0 0" />
+        <!-- <feFuncG type="table" tableValues="1 0 1" />
+        <feFuncB type="table" tableValues="1 -1 1" /> -->
+        <feFuncA type="identity" />
+      </feComponentTransfer>
+      <feComposite
+        in="componentTransfer"
+        in2="SourceAlpha"
+        operator="in"
+        result="composite"
+      />
+    </filter>
+  </svg>
+</html>

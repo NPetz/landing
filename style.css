@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+.bubble-text {
+  filter: url(#bubble);
+}
+
+#services div {
+  background-image: none;
+  &:hover {
+    background-image: url(/image.png);
+  }
+}
