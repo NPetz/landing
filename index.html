@@ -22,78 +22,98 @@
       class="snap-y snap-mandatory h-dvh overflow-y-scroll overflow-x-hidden bg-amber-50"
     >
       <!-- Hero Section -->
-      <section class="snap-center h-dvh p-4 grid" id="hero">
-        <canvas
-          id="caustics-canvas"
-          class="col-start-1 row-start-1 w-full h-full rounded-lg"
-        ></canvas>
+      <section class="snap-center h-dvh p-4 relative flex flex-col" id="hero">
         <h1
-          class="bubble-text select-none pointer-events-none text-5xl md:text-7xl lg:text-9xl font-serif font-extrabold col-start-1 row-start-1 p-4 text-shadow-md text-shadow-white z-10"
+          class="sticky top-0 select-none pointer-events-none text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold p-4"
         >
           GIULIANO MASUCCI
         </h1>
+        <canvas class="grow rounded-lg min-h-0" id="canvas"></canvas>
       </section>
 
       <!-- What I Do For You Section -->
-      <section
-        class="snap-center h-dvh p-4 flex flex-col md:flex-row gap-4"
-        id="services"
-      >
-        <div
-          class="bg-amber-100 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
-        >
-          <svg
-            class="p-4 group-hover:animate-[spin_5s_linear_infinite_reverse] max-w-40"
-            viewBox="0 0 100 100"
+      <section class="snap-center h-dvh p-4 flex flex-col grow" id="services">
+        <h2 class="text-4xl md:text-5xl lg:text-7xl font-bold py-4">
+          SOFTWARE DEVELOPER
+        </h2>
+        <div class="grow flex flex-col md:flex-row gap-4">
+          <div
+            class="bg-amber-100 hover:bg-red-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
           >
-            <path
-              id="curve"
-              d="M 0 50 A 50 50 0 0 0 100 50 M 100 50 A 50 50 0 0 0 0 50"
-              fill="transparent"
-            />
-            <circle cx="50" cy="50" r="30" class="fill-red-500" />
+            <svg
+              class="col-start-1 row-start-1 p-4 group-hover:hidden max-w-40"
+              viewBox="0 0 100 100"
+            >
+              <path
+                id="curve"
+                d="M 0 50 A 50 50 0 0 0 100 50 M 100 50 A 50 50 0 0 0 0 50"
+                fill="transparent"
+              />
+              <circle cx="50" cy="50" r="30" class="fill-red-500" />
 
-            <text class="text-xl font-bold">
-              <textPath href="#curve">MOBILE APPS</textPath>
-            </text>
-          </svg>
-        </div>
-        <div
-          class="bg-amber-100 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
-        >
-          <svg
-            class="p-4 group-hover:animate-[spin_5s_linear_infinite_reverse] max-w-40"
-            viewBox="0 0 100 100"
+              <text class="text-xl font-bold">
+                <textPath href="#curve">MOBILE APPS</textPath>
+              </text>
+            </svg>
+            <ul
+              class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex opacity-0 group-hover:opacity-100 transition-opacity text-2xl md:text-4xl font-extrabold text-amber-50"
+            >
+              <li>NATIVE iOS APPS</li>
+              <li>CROSS-PLATFORM APPS</li>
+            </ul>
+          </div>
+          <div
+            class="bg-amber-100 hover:bg-green-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
           >
-            <path
-              id="curve"
-              d="M 0 50 A 50 50 0 0 0 100 50 M 100 50 A 50 50 0 0 0 0 50"
-              fill="transparent"
-            />
-            <circle cx="50" cy="50" r="30" class="fill-green-500" />
-            <text class="text-xl font-bold">
-              <textPath href="#curve">WEB APPS & WEBSITES</textPath>
-            </text>
-          </svg>
-        </div>
-        <div
-          class="bg-amber-100 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
-        >
-          <svg
-            class="p-4 group-hover:animate-[spin_5s_linear_infinite_reverse] max-w-40"
-            viewBox="0 0 100 100"
+            <svg
+              class="col-start-1 row-start-1 p-4 group-hover:hidden max-w-40"
+              viewBox="0 0 100 100"
+            >
+              <path
+                id="curve"
+                d="M 0 50 A 50 50 0 0 0 100 50 M 100 50 A 50 50 0 0 0 0 50"
+                fill="transparent"
+              />
+              <circle cx="50" cy="50" r="30" class="fill-green-500" />
+              <text class="text-xl font-bold">
+                <textPath href="#curve">WEB APPS & WEBSITES</textPath>
+              </text>
+            </svg>
+            <ul
+              class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex opacity-0 group-hover:opacity-100 transition-opacity text-2xl md:text-4xl font-extrabold text-amber-50"
+            >
+              <li>WEB APPS</li>
+              <li>PERSONAL PAGES</li>
+              <li>LANDING PAGES</li>
+              <li>BLOGS</li>
+            </ul>
+          </div>
+          <div
+            class="bg-amber-100 hover:bg-blue-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
           >
-            <path
-              id="curve"
-              d="M 0 50 A 50 50 0 0 0 100 50 M 100 50 A 50 50 0 0 0 0 50"
-              fill="transparent"
-            />
-            <circle cx="50" cy="50" r="30" class="fill-blue-500" />
+            <svg
+              class="col-start-1 row-start-1 p-4 group-hover:hidden max-w-40"
+              viewBox="0 0 100 100"
+            >
+              <path
+                id="curve"
+                d="M 0 50 A 50 50 0 0 0 100 50 M 100 50 A 50 50 0 0 0 0 50"
+                fill="transparent"
+              />
+              <circle cx="50" cy="50" r="30" class="fill-blue-500" />
 
-            <text class="text-xl font-bold">
-              <textPath textLength="100" href="#curve">AI & ML</textPath>
-            </text>
-          </svg>
+              <text class="text-xl font-bold">
+                <textPath textLength="100" href="#curve">AI & ML</textPath>
+              </text>
+            </svg>
+            <ul
+              class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex opacity-0 group-hover:opacity-100 transition-opacity text-2xl md:text-4xl font-extrabold text-amber-50"
+            >
+              <li>CUSTOM AI FEATURES</li>
+              <li>CUSTOM LLM WORKFLOWS</li>
+              <li>MODEL DEPLOYMENT</li>
+            </ul>
+          </div>
         </div>
       </section>
 

@@ -1,8 +1,7 @@
 import * as THREE from "three";
 
-const canvas = document.getElementById("caustics-canvas");
+const canvas = document.getElementById("canvas");
 if (canvas) {
-  // Renderer
   const renderer = new THREE.WebGLRenderer({
     canvas,
     alpha: true,
@@ -11,55 +10,14 @@ if (canvas) {
 
   renderer.setPixelRatio(window.devicePixelRatio || 1);
 
-  // Scene & Camera
   const scene = new THREE.Scene();
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
-  // Shader material for caustics
   const uniforms = {
     u_time: { value: 0 },
     u_resolution: { value: new THREE.Vector2(canvas.width, canvas.height) },
   };
 
-  //   const fragmentShader = `
-  // 		precision highp float;
-  // 		uniform float u_time;
-  // 		uniform vec2 u_resolution;
-
-  // 		// Simple 2D noise
-  // 		float hash(vec2 p) {
-  // 			return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
-  // 		}
-  // 		float noise(vec2 p) {
-  // 			vec2 i = floor(p);
-  // 			vec2 f = fract(p);
-  // 			float a = hash(i);
-  // 			float b = hash(i + vec2(1.0, 0.0));
-  // 			float c = hash(i + vec2(0.0, 1.0));
-  // 			float d = hash(i + vec2(1.0, 1.0));
-  // 			vec2 u = f * f * (3.0 - 2.0 * f);
-  // 			return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
-  // 		}
-
-  //         float parabola( float x, float k ) {
-  //             return pow( 4.0*x*(1.0-x), k );
-  //         }
-
-  // 		void main() {
-  // 			vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-  // 			uv.y = 1.0 - uv.y;
-  // 			float t = u_time;
-
-  //             float n = noise(uv * 10.0 + t);
-  //             float a = smoothstep(0.5,1.0,n);
-
-  // 			vec3 color = vec3(n);
-
-  // 			gl_FragColor = vec4(color, a);
-  // 		}
-  // 	`;
-
-  // GLSL fragment shader for water caustics
   const fragmentShader = `
     // 3D simplex noise adapted from https://www.shadertoy.com/view/Ws23RD
     // * Removed gradient normalization
@@ -173,7 +131,7 @@ if (canvas) {
 
         vec3 rd = p.x*uu + p.y*vv + 1.5*ww;	// view ray
         vec3 pos = ww + rd*(ww.y/rd.y);	// raytrace plane
-        pos.y = u_time * 0.1;					// animate noise slice
+        pos.y = u_time * 0.05;					// animate noise slice
         pos *= 1.;							// tiling frequency
 
         float w = water_caustics(pos);
@@ -203,61 +161,6 @@ if (canvas) {
     }
 `;
 
-  // GLSL fragment shader for water caustics with chromatic aberration
-  //   const fragmentShader = `
-  // 		precision highp float;
-  // 		uniform float u_time;
-  // 		uniform vec2 u_resolution;
-
-  // 		// Simple 2D noise
-  // 		float hash(vec2 p) {
-  // 			return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
-  // 		}
-  // 		float noise(vec2 p) {
-  // 			vec2 i = floor(p);
-  // 			vec2 f = fract(p);
-  // 			float a = hash(i);
-  // 			float b = hash(i + vec2(1.0, 0.0));
-  // 			float c = hash(i + vec2(0.0, 1.0));
-  // 			float d = hash(i + vec2(1.0, 1.0));
-  // 			vec2 u = f * f * (3.0 - 2.0 * f);
-  // 			return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
-  // 		}
-
-  // 		// Caustics base pattern
-  // 		float caustics(vec2 uv, float t) {
-  // 			float n = 0.0;
-  // 			float scale = 3.0;
-  // 			for (int i = 0; i < 3; i++) {
-  // 				n += noise(uv * scale + t * 0.05) * 0.5;
-  // 				scale *= 2.0;
-  // 			}
-  // 			return n;
-  // 		}
-
-  // 		void main() {
-  // 			vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-  // 			uv.y = 1.0 - uv.y;
-  // 			float t = u_time;
-
-  // 			float c = caustics(uv, t);
-
-  //             // Caustic lines: only show color where lines are strong
-  // 			float lines = smoothstep(0.7, 0.85, c);
-  // 			float alpha = lines;
-
-  // 			// Chromatic aberration
-  // 			float r =  c * 0.2;
-  // 			float g =  c * 0.9;
-  // 			float b =  c * 0.6;
-
-  // 			// Chromatic caustic color
-  // 			vec3 color = mix(vec3(0.0), vec3(r, g, b) + lines, lines);
-  // 			gl_FragColor = vec4(color, alpha);
-  // 		}
-  // 	`;
-
-  // Plane geometry and shader
   const geometry = new THREE.PlaneGeometry(2, 2);
   const material = new THREE.ShaderMaterial({
     uniforms,
@@ -269,7 +172,6 @@ if (canvas) {
   const mesh = new THREE.Mesh(geometry, material);
   scene.add(mesh);
 
-  // Animation loop
   function animate() {
     uniforms.u_time.value = performance.now() * 0.001;
     renderer.render(scene, camera);
