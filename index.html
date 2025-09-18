@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Giuliano Masucci || Web Developer</title>
+    <title>Giuliano Masucci || Software Developer</title>
 
     <link href="./output.css" rel="stylesheet" />
     <script type="importmap">
       {
         "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
         }
       }
     </script>
@@ -19,31 +18,37 @@
 
   <body>
     <main
-      class="snap-y snap-mandatory h-dvh overflow-y-scroll overflow-x-hidden bg-amber-50"
+      class="snap-y snap-mandatory h-dvh overflow-y-scroll overflow-x-hidden bg-amber-50 font-stretch-expanded"
     >
       <!-- Hero Section -->
       <section class="snap-center h-dvh p-4 relative flex flex-col" id="hero">
         <h1
-          class="sticky top-0 select-none pointer-events-none text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold pb-4 ps-4"
+          class="sticky top-0 select-none pointer-events-none text-[clamp(1rem,0.8rem_+_6vw,15rem)]/tight font-extrabold pb-4 ps-4"
         >
           GIULIANO MASUCCI
         </h1>
-        <canvas class="grow rounded-lg min-h-0" id="canvas"></canvas>
+        <canvas class="grow rounded-lg min-h-0" id="canvas">
+          <img src="" alt="" class="w-full h-full" />
+        </canvas>
       </section>
 
       <!-- What I Do For You Section -->
-      <section class="snap-center h-dvh p-4 flex flex-col grow" id="services">
+      <section
+        class="overflow-hidden snap-center h-dvh p-4 flex flex-col grow"
+        id="services"
+      >
         <h2
-          class="text-4xl md:text-5xl lg:text-7xl font-bold pb-4 select-none pointer-events-none"
+          class="text-4xl md:text-5xl lg:text-7xl font-bold pb-4 select-none pointer-events-none font-stretch-expanded"
         >
           SOFTWARE DEVELOPER
         </h2>
-        <div class="grow flex flex-col md:flex-row gap-4 whitespace-nowrap">
+        <div class="grow flex flex-col sm:flex-row gap-4 whitespace-nowrap">
           <div
-            class="bg-amber-100 hover:bg-red-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500 overflow-hidden"
+            tabindex="1"
+            class="bg-amber-100 hover:bg-red-500 focus:bg-red-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-3 hover:flex-3 transition-all duration-500 overflow-hidden"
           >
             <svg
-              class="col-start-1 row-start-1 p-4 group-hover:hidden max-w-40"
+              class="col-start-1 row-start-1 p-4 group-hover:hidden group-focus:hidden w-[clamp(6rem,6rem_+_5vw,15rem)]"
               viewBox="0 0 100 100"
             >
               <path
@@ -51,49 +56,51 @@
                 d="M 0 50 A 50 50 0 0 0 100 50 M 100 50 A 50 50 0 0 0 0 50"
                 fill="transparent"
               />
-              <circle cx="50" cy="50" r="30" class="fill-red-500" />
+              <circle cx="50" cy="50" r="25" class="fill-red-500" />
 
-              <text class="text-xl font-bold">
+              <text class="text-xl font-stretch-expanded font-bold">
                 <textPath href="#curve">MOBILE APPS</textPath>
               </text>
             </svg>
             <ul
-              class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex opacity-0 group-hover:opacity-100 transition-opacity text-2xl md:text-4xl font-extrabold text-amber-50"
+              class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex group-focus:flex group-focus:opacity-100 opacity-0 group-hover:opacity-100 transition-opacity text-amber-50 text-[clamp(1rem,2vw,2rem)] font-extrabold"
             >
               <li>NATIVE iOS APPS</li>
               <li>CROSS-PLATFORM APPS</li>
             </ul>
           </div>
           <div
-            class="bg-amber-100 hover:bg-green-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500 overflow-hidden"
+            tabindex="2"
+            class="bg-amber-100 hover:bg-green-500 focus:bg-green-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-3 hover:flex-3 transition-all duration-500 overflow-hidden"
           >
             <svg
-              class="col-start-1 row-start-1 p-4 group-hover:hidden max-w-40"
+              class="col-start-1 row-start-1 p-4 group-hover:hidden group-focus:hidden w-[clamp(6rem,6rem_+_5vw,15rem)]"
               viewBox="0 0 100 100"
             >
               <path
                 id="curve"
-                d="M 0 50 A 50 50 0 0 0 100 50 M 100 50 A 50 50 0 0 0 0 50"
+                d="M 0 50 A 50 50 0 0 0 200 50 M 100 50 A 50 50 0 0 0 0 50"
                 fill="transparent"
               />
-              <circle cx="50" cy="50" r="30" class="fill-green-500" />
+              <circle cx="50" cy="50" r="25" class="fill-green-500" />
               <text class="text-xl font-bold">
                 <textPath href="#curve">WEB APPS & WEBSITES</textPath>
               </text>
             </svg>
             <ul
-              class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex opacity-0 group-hover:opacity-100 transition-opacity text-2xl md:text-4xl font-extrabold text-amber-50"
+              class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex group-focus:flex group-focus:opacity-100 opacity-0 group-hover:opacity-100 transition-opacity text-amber-50 text-[clamp(1rem,2vw,2rem)] font-extrabold"
             >
               <li>WEB APPS</li>
-              <li>PERSONAL & LANDING PAGES</li>
-              <li>BLOGS</li>
+              <li>LANDING PAGES</li>
+              <li>PERSONAL PAGES & BLOGS</li>
             </ul>
           </div>
           <div
-            class="bg-amber-100 hover:bg-blue-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500 overflow-hidden"
+            tabindex="3"
+            class="bg-amber-100 hover:bg-blue-500 focus:bg-blue-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-3 hover:flex-3 transition-all duration-500 overflow-hidden"
           >
             <svg
-              class="col-start-1 row-start-1 p-4 group-hover:hidden max-w-40"
+              class="col-start-1 row-start-1 p-4 group-hover:hidden group-focus:hidden w-[clamp(6rem,6rem_+_5vw,15rem)]"
               viewBox="0 0 100 100"
             >
               <path
@@ -101,17 +108,17 @@
                 d="M 0 50 A 50 50 0 0 0 100 50 M 100 50 A 50 50 0 0 0 0 50"
                 fill="transparent"
               />
-              <circle cx="50" cy="50" r="30" class="fill-blue-500" />
+              <circle cx="50" cy="50" r="25" class="fill-blue-500" />
 
-              <text class="text-xl font-bold">
+              <text class="text-xl font-stretch-expanded font-bold">
                 <textPath textLength="100" href="#curve">AI & ML</textPath>
               </text>
             </svg>
             <ul
-              class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex opacity-0 group-hover:opacity-100 transition-opacity text-2xl md:text-4xl font-extrabold text-amber-50"
+              class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex group-focus:flex group-focus:opacity-100 opacity-0 group-hover:opacity-100 transition-opacity text-amber-50 text-[clamp(1rem,2vw,2rem)] font-extrabold"
             >
-              <li>INTEGRATION WITH GEN-AI APIs</li>
-              <li>DEPLOYMENT OF AD-HOC MODELS</li>
+              <li>GEN-AI INTEGRATION</li>
+              <li>MODELS DEPLOYMENT</li>
             </ul>
           </div>
         </div>
@@ -119,10 +126,11 @@
 
       <!-- Project Showcase Section -->
       <section
-        class="snap-center h-dvh snap-x snap-mandatory flex overflow-x-scroll overflow-y-hidden w-full text-4xl font-extrabold text-amber-50"
+        class="overflow-hidden snap-center h-dvh snap-x snap-mandatory flex overflow-x-scroll overflow-y-hidden w-full text-4xl font-extrabold text-amber-50"
         id="projects"
       >
         <div
+          tabindex="4"
           class="min-w-dvw snap-start rounded-lg p-4 grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-4"
         >
           <img
@@ -142,6 +150,7 @@
         </div>
 
         <div
+          tabindex="5"
           class="min-w-dvw snap-start rounded-lg p-4 flex flex-col md:grid md:grid-cols-[3fr_1fr] gap-4"
         >
           <h3
@@ -163,6 +172,7 @@
         </div>
 
         <div
+          tabindex="6"
           class="min-w-dvw snap-start rounded-lg p-4 grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4"
         >
           <section class="rounded-lg flex flex-col gap-4">
@@ -184,22 +194,49 @@
 
       <!-- Contact Section -->
       <section
-        class="snap-center h-dvh p-4 grid auto-cols-auto grid-flow-row gap-4 whitespace-nowrap font-extrabold"
+        class="overflow-hidden snap-center h-dvh p-4 grid auto-cols-auto grid-flow-row gap-2 lg:gap-4 font-extrabold"
         id="contact"
       >
-        <ul class="text-2xl flex flex-col gap-4">
-          <li class="grow grid place-items-center bg-white rounded-lg p-4">
-            CONTACT ME
-          </li>
-          <li class="grow grid place-items-center bg-white rounded-lg p-4">
-            HIRE ME
-          </li>
-          <li class="grow grid place-items-center bg-white rounded-lg p-4">
-            WORK WITH ME
-          </li>
-        </ul>
-        <div class="flex gap-4">
+        <div class="grid">
+          <div class="flex col-start-1 row-start-1 gap-2 lg:gap-4">
+            <div class="bg-red-500 grow rounded-lg"></div>
+            <div class="bg-green-500 grow rounded-lg"></div>
+            <div class="bg-blue-500 grow rounded-lg"></div>
+          </div>
+          <ul
+            class="text-2xl flex flex-col col-start-1 row-start-1 p-2 gap-2 lg:p-4 lg:gap-4"
+          >
+            <li
+              class="grow grid place-items-center bg-amber-50 rounded-lg p-2 lg:p-4"
+            >
+              CONTACT ME
+            </li>
+            <li
+              class="grow grid place-items-center bg-amber-50 rounded-lg p-2 lg:p-4"
+            >
+              HIRE ME
+            </li>
+            <li
+              class="grow grid place-items-center bg-amber-50 rounded-lg p-2 lg:p-4"
+            >
+              WORK WITH ME
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="bg-amber-100 rounded-lg p-4 md:text-xl grid place-items-center overflow-scroll"
+        >
+          <div
+            class="flex items-center gap-2 text-[clamp(0.9rem,-0.08rem_+_2vw,3rem)]"
+          >
+            GIULIANO.MASUCCI@GMAIL.COM
+          </div>
+        </div>
+
+        <div class="flex gap-2 lg:gap-4">
           <a
+            tabindex="7"
             class="bg-amber-100 rounded-lg p-4 grow grid place-items-center"
             href="https://github.com/NPetz"
             target="_blank"
@@ -218,6 +255,7 @@
             </svg>
           </a>
           <a
+            tabindex="8"
             class="bg-amber-100 rounded-lg p-4 grow grid place-items-center"
             href="https://www.linkedin.com/in/giuliano-masucci/"
             target="_blank"
@@ -228,18 +266,11 @@
               ></path>
             </svg>
           </a>
-        </div>
-
-        <div
-          class="bg-amber-100 rounded-lg p-4 grid place-items-center md:text-2xl"
-        >
-          GIULIANO[dot]MASUCCI[at]GMAIL[dot]COM
-        </div>
-
-        <div
-          class="bg-amber-100 rounded-lg p-4 grid place-items-center text-xl"
-        >
-          Built with ❤️ by me
+          <div
+            class="bg-amber-100 rounded-lg p-4 grid place-items-center grow text-[clamp(1rem,-0.08rem_+_2vw,3rem)]"
+          >
+            Built by me
+          </div>
         </div>
       </section>
     </main>
