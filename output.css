@@ -10,15 +10,10 @@
     --color-red-500: oklch(63.7% 0.237 25.331);
     --color-amber-50: oklch(98.7% 0.022 95.277);
     --color-amber-100: oklch(96.2% 0.059 95.617);
-    --color-amber-300: oklch(87.9% 0.169 91.605);
     --color-green-500: oklch(72.3% 0.219 149.579);
     --color-blue-500: oklch(62.3% 0.214 259.815);
-    --color-violet-500: oklch(60.6% 0.25 292.717);
-    --color-pink-500: oklch(65.6% 0.241 354.308);
     --color-white: #fff;
     --spacing: 0.25rem;
-    --text-lg: 1.125rem;
-    --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
@@ -37,7 +32,6 @@
     --text-9xl--line-height: 1;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
-    --leading-tight: 1.25;
     --radius-lg: 0.5rem;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -308,6 +302,15 @@
   .bg-amber-100 {
     background-color: var(--color-amber-100);
   }
+  .bg-blue-500 {
+    background-color: var(--color-blue-500);
+  }
+  .bg-green-500 {
+    background-color: var(--color-green-500);
+  }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
+  }
   .bg-white {
     background-color: var(--color-white);
   }
@@ -368,11 +371,8 @@
   .text-green-500 {
     color: var(--color-green-500);
   }
-  .text-red-500 {
-    color: var(--color-red-500);
-  }
-  .text-transparent {
-    color: transparent;
+  .text-white {
+    color: var(--color-white);
   }
   .uppercase {
     text-transform: uppercase;
@@ -613,6 +613,19 @@
       --tw-inset-shadow: 0 0 #0000;
       --tw-inset-shadow-color: initial;
       --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-duration: initial;
+    }
+  }
+}
+et-shadow-alpha: 100%;
       --tw-ring-color: initial;
       --tw-ring-shadow: 0 0 #0000;
       --tw-inset-ring-color: initial;
