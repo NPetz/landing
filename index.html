@@ -24,7 +24,7 @@
       <!-- Hero Section -->
       <section class="snap-center h-dvh p-4 relative flex flex-col" id="hero">
         <h1
-          class="sticky top-0 select-none pointer-events-none text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold p-4"
+          class="sticky top-0 select-none pointer-events-none text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold pb-4 ps-4"
         >
           GIULIANO MASUCCI
         </h1>
@@ -33,12 +33,14 @@
 
       <!-- What I Do For You Section -->
       <section class="snap-center h-dvh p-4 flex flex-col grow" id="services">
-        <h2 class="text-4xl md:text-5xl lg:text-7xl font-bold py-4">
+        <h2
+          class="text-4xl md:text-5xl lg:text-7xl font-bold pb-4 select-none pointer-events-none"
+        >
           SOFTWARE DEVELOPER
         </h2>
-        <div class="grow flex flex-col md:flex-row gap-4">
+        <div class="grow flex flex-col md:flex-row gap-4 whitespace-nowrap">
           <div
-            class="bg-amber-100 hover:bg-red-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
+            class="bg-amber-100 hover:bg-red-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500 overflow-hidden"
           >
             <svg
               class="col-start-1 row-start-1 p-4 group-hover:hidden max-w-40"
@@ -63,7 +65,7 @@
             </ul>
           </div>
           <div
-            class="bg-amber-100 hover:bg-green-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
+            class="bg-amber-100 hover:bg-green-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500 overflow-hidden"
           >
             <svg
               class="col-start-1 row-start-1 p-4 group-hover:hidden max-w-40"
@@ -83,13 +85,12 @@
               class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex opacity-0 group-hover:opacity-100 transition-opacity text-2xl md:text-4xl font-extrabold text-amber-50"
             >
               <li>WEB APPS</li>
-              <li>PERSONAL PAGES</li>
-              <li>LANDING PAGES</li>
+              <li>PERSONAL & LANDING PAGES</li>
               <li>BLOGS</li>
             </ul>
           </div>
           <div
-            class="bg-amber-100 hover:bg-blue-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500"
+            class="bg-amber-100 hover:bg-blue-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-8 hover:flex-8 transition-all duration-500 overflow-hidden"
           >
             <svg
               class="col-start-1 row-start-1 p-4 group-hover:hidden max-w-40"
@@ -109,9 +110,8 @@
             <ul
               class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex opacity-0 group-hover:opacity-100 transition-opacity text-2xl md:text-4xl font-extrabold text-amber-50"
             >
-              <li>CUSTOM AI FEATURES</li>
-              <li>CUSTOM LLM WORKFLOWS</li>
-              <li>MODEL DEPLOYMENT</li>
+              <li>INTEGRATION WITH GEN-AI APIs</li>
+              <li>DEPLOYMENT OF AD-HOC MODELS</li>
             </ul>
           </div>
         </div>
@@ -119,128 +119,131 @@
 
       <!-- Project Showcase Section -->
       <section
-        class="snap-center h-dvh snap-x snap-mandatory flex overflow-x-scroll w-full"
+        class="snap-center h-dvh snap-x snap-mandatory flex overflow-x-scroll overflow-y-hidden w-full text-4xl font-extrabold bg-white"
         id="projects"
       >
-        <div class="min-w-dvw snap-start p-4 flex flex-col md:flex-row gap-4">
+        <div
+          class="min-w-dvw snap-start text-red-500 rounded-lg p-4 grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-4"
+        >
           <img
-            class="rounded-lg object-cover grow"
+            class="rounded-lg object-cover min-w-0 min-h-0 w-full h-full"
             src="flowerbed.png"
             alt=""
           />
-          <div class="rounded-lg bg-amber-400">
-            <h3>AI Curriculm Generator</h3>
-            <p>
-              A learning platform that generates a study curriculum with lessons
-              and tests, tailored to individual needs.
+          <section class="rounded-lg flex flex-col gap-4">
+            <h3 class="rounded-lg p-4 uppercase bg-amber-50 text-2xl">
+              Pharmaceautical R&D Tool
+            </h3>
+            <p class="rounded-lg p-4 bg-amber-50 grow text-xl">
+              An AI research tool to help find novel formulations for skincare
+              products.
             </p>
-            <div>
-              <span>Typescript</span>
-              <span>Next.js</span>
-              <span>Python</span>
-              <span>FastAPI</span>
-              <span>Elasticsearch</span>
-              <span>OpenAI</span>
-            </div>
-          </div>
+          </section>
         </div>
 
-        <div class="min-w-dvw snap-start p-4 flex flex-col md:flex-row gap-4">
+        <div
+          class="min-w-dvw snap-start text-green-500 rounded-lg p-4 flex flex-col md:grid md:grid-cols-[3fr_1fr] gap-4"
+        >
+          <h3
+            class="rounded-lg p-4 uppercase bg-amber-50 text-2xl md:col-span-2"
+          >
+            AI Learning Platform
+          </h3>
+
           <img
-            class="rounded-lg object-cover grow"
+            class="rounded-lg object-cover grow min-w-0 min-h-0 w-full h-full"
             src="flowerbed.png"
             alt=""
           />
-          <div class="rounded-lg bg-amber-400">
-            <h3>Pharmaceautical R&D Tool</h3>
-            <p>
-              An AI formulation generator to help R&D researchers find novel
-              formulations for skincare products.
-            </p>
-            <div>
-              <span>Typescript</span>
-              <span>Vite</span>
-              <span>React.js</span>
-              <span>Python</span>
-              <span>FastAPI</span>
-              <span>PostgreSQL</span>
-            </div>
-          </div>
+
+          <p class="rounded-lg p-4 bg-amber-50 text-xl">
+            An individually tailored lessons and tests generator, to help in
+            studying anything.
+          </p>
         </div>
-        <div class="min-w-dvw snap-start p-4 flex flex-col md:flex-row gap-4">
-          <img
-            class="rounded-lg object-cover grow"
-            src="flowerbed.png"
-            alt=""
-          />
-          <div class="rounded-lg bg-amber-400">
-            <h3>Smart Mug App</h3>
-            <p>
+
+        <div
+          class="min-w-dvw snap-start text-blue-500 rounded-lg p-4 grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4"
+        >
+          <section class="rounded-lg flex flex-col gap-4">
+            <h3 class="rounded-lg p-4 uppercase bg-amber-50 text-2xl">
+              Smart Mug App
+            </h3>
+            <p class="rounded-lg p-4 bg-amber-50 grow text-xl">
               An App to control a Smart Mug that keeps your beverage at your
               desired temperature, via Bluetooth.
             </p>
-            <div>
-              <span>Dart</span>
-              <span>Flutter</span>
-              <span>Firebase</span>
-            </div>
-          </div>
+          </section>
+          <img
+            class="rounded-lg object-cover min-w-0 min-h-0 w-full h-full"
+            src="flowerbed.png"
+            alt=""
+          />
         </div>
       </section>
 
       <!-- Contact Section -->
-      <section class="snap-center h-dvh p-4" id="contact">
-        <h2>Contant me to build your project, or to join your team</h2>
-        <div>GOOGLE FORM</div>
+      <section
+        class="snap-center h-dvh p-4 grid auto-cols-auto grid-flow-row gap-4 whitespace-nowrap font-extrabold"
+        id="contact"
+      >
+        <ul class="text-2xl flex flex-col gap-4">
+          <li class="grow grid place-items-center bg-white rounded-lg p-4">
+            CONTACT ME
+          </li>
+          <li class="grow grid place-items-center bg-white rounded-lg p-4">
+            HIRE ME
+          </li>
+          <li class="grow grid place-items-center bg-white rounded-lg p-4">
+            WORK WITH ME
+          </li>
+        </ul>
+        <div class="flex gap-4">
+          <a
+            class="bg-amber-100 rounded-lg p-4 grow grid place-items-center"
+            href="https://github.com/NPetz"
+            target="_blank"
+          >
+            <svg viewBox="0 0 128 128" width="50" height="50">
+              <g>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                ></path>
+                <path
+                  d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                ></path>
+              </g>
+            </svg>
+          </a>
+          <a
+            class="bg-amber-100 rounded-lg p-4 grow grid place-items-center"
+            href="https://www.linkedin.com/in/giuliano-masucci/"
+            target="_blank"
+          >
+            <svg viewBox="0 0 128 128" width="50" height="50">
+              <path
+                d="M116 3H12a8.91 8.91 0 00-9 8.8v104.42a8.91 8.91 0 009 8.78h104a8.93 8.93 0 009-8.81V11.77A8.93 8.93 0 00116 3zM39.17 107H21.06V48.73h18.11zm-9-66.21a10.5 10.5 0 1110.49-10.5 10.5 10.5 0 01-10.54 10.48zM107 107H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53V48.73h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+
+        <div
+          class="bg-amber-100 rounded-lg p-4 grid place-items-center md:text-2xl"
+        >
+          <span class="text-transparent">
+            GIULIANO[dot]MASUCCI[at]GMAIL[dot]COM
+          </span>
+        </div>
+
+        <div
+          class="bg-amber-100 rounded-lg p-4 grid place-items-center text-xl"
+        >
+          Built with ❤️ by me
+        </div>
       </section>
     </main>
   </body>
-
-  <!-- FILTER EFFECTS -->
-
-  <svg class="hidden">
-    <filter id="bubble">
-      <feTurbulence
-        type="fractalNoise"
-        baseFrequency="0.02 0.04"
-        numOctaves="6"
-        seed="4"
-        stitchTiles="stitch"
-        result="turbulence"
-      />
-      <feColorMatrix
-        type="matrix"
-        values="1 0 0 0 0
-0 1 0 0 0
-0 0 1 0 0
-0 0 0 0 1"
-        in="turbulence"
-        result="colormatrix"
-      />
-      <feColorMatrix
-        type="saturate"
-        values="1"
-        in="colormatrix"
-        result="colormatrix1"
-      />
-      <feGaussianBlur
-        stdDeviation="3 5"
-        in="componentTransfer"
-        edgeMode="none"
-        result="blur"
-      />
-      <feComponentTransfer in="composite" result="componentTransfer">
-        <feFuncR type="table" tableValues="3 0 0" />
-        <!-- <feFuncG type="table" tableValues="1 0 1" />
-        <feFuncB type="table" tableValues="1 -1 1" /> -->
-        <feFuncA type="identity" />
-      </feComponentTransfer>
-      <feComposite
-        in="componentTransfer"
-        in2="SourceAlpha"
-        operator="in"
-        result="composite"
-      />
-    </filter>
-  </svg>
 </html>

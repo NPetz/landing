@@ -20,8 +20,6 @@ if (canvas) {
 
   const fragmentShader = `
     // 3D simplex noise adapted from https://www.shadertoy.com/view/Ws23RD
-    // * Removed gradient normalization
-
 
     precision highp float;
     uniform float u_time;
@@ -120,44 +118,45 @@ if (canvas) {
         return n.w;
     }
 
+
     void main()
     {
-        vec2 p = ( -u_resolution.xy + 2.0 * gl_FragCoord.xy) / u_resolution.y;
+        vec2 p = ( -u_resolution.xy +  gl_FragCoord.xy) / u_resolution.y;
 
         // camera matrix
-        vec3 ww = normalize(vec3(0., 1., 0.8));
+        vec3 ww = normalize(vec3(0., 1., 0.5));
         vec3 uu = normalize(cross(ww, vec3(0., 1., 0.)));
         vec3 vv = normalize(cross(uu,ww));
 
-        vec3 rd = p.x*uu + p.y*vv + 1.5*ww;	// view ray
+        vec3 rd = p.x*uu + p.y*vv + ww;	// view ray
         vec3 pos = ww + rd*(ww.y/rd.y);	// raytrace plane
-        pos.y = u_time * 0.05;					// animate noise slice
-        pos *= 1.;							// tiling frequency
+        pos.y = u_time * 0.02;					// animate noise slice
+        pos *= .7;							// tiling frequency
 
-        float w = water_caustics(pos);
+        float w1 = water_caustics(pos);
 
-        float i = exp(w - 0.1);
-        float a = smoothstep(0.6, 1., i);
-        float r = i * .63 ;
-        float g = i * .88 ;
-        float b = i * .27 ;
-        vec3 c = vec3(r,g,b);
-
+        float i1 = exp(w1 );
+        float a1 = smoothstep(0.6, .8, i1);
+        vec4 c1 = vec4(.98,.17,.21, a1);
 
         float w2 =  water_caustics(pos + 1.);
 
-        float i2 = exp(w2 - 0.1);
-        float a2 = smoothstep(0.6, 1., i2);
-        float r2 = i2 * .83 ;
-        float g2 = i2 * .15 ;
-        float b2 = i2 * .49 ;
-        vec3 c2 = vec3(r2,g2,b2);
+        float i2 = exp(w2 );
+        float a2 = smoothstep(0.6, .8, i2);
+        vec4 c2 = vec4(0.,.79,.32, a2);
 
-        vec3 color = mix(c,c2,.5);
-        float alpha = mix(a,a2, .9);
+        float w3 =  water_caustics(pos - 1.);
 
-        gl_FragColor = vec4(color, alpha);
+        float i3 = exp(w3 );
+        float a3 = smoothstep(0.6, .8, i3);
+        vec4 c3 = vec4(.17,.5,1.,a3);
 
+        vec4 c = vec4(0.);
+        if (c3.a > 0.3) c = c3;
+        if (c2.a > 0.4) c = c2;
+        if (c1.a > 0.5) c = c1;
+
+        gl_FragColor = c;
     }
 `;
 
