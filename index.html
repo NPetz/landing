@@ -9,7 +9,7 @@
     <script type="importmap">
       {
         "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+          "three": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.180.0/three.module.min.js"
         }
       }
     </script>
@@ -27,9 +27,19 @@
         >
           GIULIANO MASUCCI
         </h1>
-        <canvas class="grow rounded-lg min-h-0" id="canvas">
-          <img src="" alt="" class="w-full h-full" />
+        <div class="grow grid">
+          <canvas
+            class="w-full h-full rounded-lg min-h-0 col-start-1 row-start-1"
+            id="canvas"
+          >
         </canvas>
+          <img
+            id="canvas-preview"
+            src="preview.png"
+            alt=""
+            class="w-full h-full col-start-1 row-start-1 rounded-lg"
+          />
+        </div>
       </section>
 
       <!-- What I Do For You Section -->
