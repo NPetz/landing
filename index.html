@@ -32,7 +32,7 @@
             class="w-full h-full rounded-lg min-h-0 col-start-1 row-start-1"
             id="canvas"
           >
-        </canvas>
+          </canvas>
           <img
             id="canvas-preview"
             src="preview.png"
@@ -55,10 +55,10 @@
         <div class="grow flex flex-col sm:flex-row gap-4 whitespace-nowrap">
           <div
             tabindex="1"
-            class="bg-amber-100 hover:bg-red-500 focus:bg-red-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-3 hover:flex-3 transition-all duration-500 overflow-hidden"
+            class="bg-amber-100 hover:bg-red-500 max-sm:focus:bg-red-500 group grow rounded-lg grid place-items-center flex-1 max-sm:focus:flex-3 hover:flex-3 transition-all duration-500 overflow-hidden"
           >
             <svg
-              class="col-start-1 row-start-1 p-4 group-hover:hidden group-focus:hidden w-[clamp(6rem,6rem_+_5vw,15rem)]"
+              class="col-start-1 row-start-1 p-4 group-hover:hidden max-sm:group-focus:hidden w-[clamp(6rem,6rem_+_5vw,15rem)]"
               viewBox="0 0 100 100"
             >
               <path
@@ -73,7 +73,7 @@
               </text>
             </svg>
             <ul
-              class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex group-focus:flex group-focus:opacity-100 opacity-0 group-hover:opacity-100 transition-opacity text-amber-50 text-[clamp(1rem,2vw,2rem)] font-extrabold"
+              class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex max-sm:group-focus:flex group-focus:opacity-100 opacity-0 group-hover:opacity-100 transition-opacity text-amber-50 text-[clamp(1rem,2vw,2rem)] font-extrabold"
             >
               <li>NATIVE iOS APPS</li>
               <li>CROSS-PLATFORM APPS</li>
@@ -81,10 +81,10 @@
           </div>
           <div
             tabindex="2"
-            class="bg-amber-100 hover:bg-green-500 focus:bg-green-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-3 hover:flex-3 transition-all duration-500 overflow-hidden"
+            class="bg-amber-100 hover:bg-green-500 max-sm:focus:bg-green-500 group grow rounded-lg grid place-items-center flex-1 max-sm:focus:flex-3 hover:flex-3 transition-all duration-500 overflow-hidden"
           >
             <svg
-              class="col-start-1 row-start-1 p-4 group-hover:hidden group-focus:hidden w-[clamp(6rem,6rem_+_5vw,15rem)]"
+              class="col-start-1 row-start-1 p-4 group-hover:hidden max-sm:group-focus:hidden w-[clamp(6rem,6rem_+_5vw,15rem)]"
               viewBox="0 0 100 100"
             >
               <path
@@ -98,7 +98,7 @@
               </text>
             </svg>
             <ul
-              class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex group-focus:flex group-focus:opacity-100 opacity-0 group-hover:opacity-100 transition-opacity text-amber-50 text-[clamp(1rem,2vw,2rem)] font-extrabold"
+              class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex max-sm:group-focus:flex max-sm:group-focus:opacity-100 opacity-0 group-hover:opacity-100 transition-opacity text-amber-50 text-[clamp(1rem,2vw,2rem)] font-extrabold"
             >
               <li>WEB APPS</li>
               <li>LANDING PAGES</li>
@@ -107,10 +107,10 @@
           </div>
           <div
             tabindex="3"
-            class="bg-amber-100 hover:bg-blue-500 focus:bg-blue-500 group grow rounded-lg grid place-items-center flex-1 focus:flex-3 hover:flex-3 transition-all duration-500 overflow-hidden"
+            class="bg-amber-100 hover:bg-blue-500 max-sm:focus:bg-blue-500 group grow rounded-lg grid place-items-center flex-1 max-sm:focus:flex-3 hover:flex-3 transition-all duration-500 overflow-hidden"
           >
             <svg
-              class="col-start-1 row-start-1 p-4 group-hover:hidden group-focus:hidden w-[clamp(6rem,6rem_+_5vw,15rem)]"
+              class="col-start-1 row-start-1 p-4 group-hover:hidden max-sm:group-focus:hidden w-[clamp(6rem,6rem_+_5vw,15rem)]"
               viewBox="0 0 100 100"
             >
               <path
@@ -125,7 +125,7 @@
               </text>
             </svg>
             <ul
-              class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex group-focus:flex group-focus:opacity-100 opacity-0 group-hover:opacity-100 transition-opacity text-amber-50 text-[clamp(1rem,2vw,2rem)] font-extrabold"
+              class="col-start-1 row-start-1 flex-col p-4 gap-4 hidden group-hover:flex max-sm:group-focus:flex max-sm:group-focus:opacity-100 opacity-0 group-hover:opacity-100 transition-opacity text-amber-50 text-[clamp(1rem,2vw,2rem)] font-extrabold"
             >
               <li>GEN-AI INTEGRATION</li>
               <li>MODELS DEPLOYMENT</li>
@@ -150,35 +150,47 @@
           />
           <section class="rounded-lg flex flex-col gap-4">
             <h3 class="rounded-lg p-4 uppercase bg-red-500 text-2xl">
-              Pharmaceautical R&D Tool
+              Scientific R&D Tool
             </h3>
             <p class="rounded-lg p-4 bg-red-500 grow text-xl">
-              An AI research tool to help find novel formulations for skincare
-              products.
+              A ML research tool to help scientists find novel solutions.
             </p>
+            <ul
+              class="rounded-lg p-4 bg-red-500 grow flex flex-col gap-4 text-lg"
+            >
+              <li>Frontend with React & Vite</li>
+              <li>Backend and API with Python & FastAPI</li>
+              <li>Data wrangling with Pandas and Numpy</li>
+              <li>Google Cloud Functions</li>
+              <li>Postgresql</li>
+            </ul>
           </section>
         </div>
 
         <div
           tabindex="5"
-          class="min-w-dvw snap-start rounded-lg p-4 flex flex-col md:grid md:grid-cols-[3fr_1fr] gap-4"
+          class="min-w-dvw snap-start rounded-lg p-4 flex flex-col md:grid md:grid-cols-[3fr_1fr] md:grid-rows-[min-content_1fr_1fr] gap-4"
         >
           <h3
-            class="rounded-lg p-4 uppercase text-2xl md:col-span-2 bg-green-500"
+            class="rounded-lg p-4 uppercase text-2xl md:col-span-2 bg-green-500 h-min"
           >
-            AI Learning Platform
+            GEN-AI Study Platform
           </h3>
 
           <img
-            class="rounded-lg object-cover grow min-w-0 min-h-0 w-full h-full"
+            class="rounded-lg object-cover grow min-w-0 min-h-0 w-full h-full row-span-2"
             src="flowerbed.png"
             alt=""
           />
 
-          <p class="rounded-lg p-4 text-xl bg-green-500">
-            An individually tailored lessons and tests generator, to help in
-            studying anything.
-          </p>
+          <p class="rounded-lg p-4 text-xl bg-green-500">An LLM</p>
+          <ul
+            class="rounded-lg p-4 bg-green-500 grow flex flex-col gap-4 text-lg col-start-2"
+          >
+            <li>Frontend with Next.js</li>
+            <li>LLM pipelines with OpenAI and Gemini</li>
+            <li>Databse design with Postgresql and SQLAlchemy</li>
+          </ul>
         </div>
 
         <div
@@ -187,13 +199,22 @@
         >
           <section class="rounded-lg flex flex-col gap-4">
             <h3 class="rounded-lg p-4 uppercase bg-blue-500 text-2xl">
-              Smart Mug App
+              BLE Device App
             </h3>
             <p class="rounded-lg p-4 bg-blue-500 grow text-xl">
-              An App to control a Smart Mug that keeps your beverage at your
-              desired temperature, via Bluetooth.
+              An App to control a BLE device with usage statistics and
+              visualizations.
             </p>
+            <ul
+              class="rounded-lg p-4 bg-blue-500 grow flex flex-col gap-4 text-lg"
+            >
+              <li>Cross-platform development with Flutter and Provider</li>
+              <li>Bluetooth connectivity with Flutter-BLE</li>
+              <li>NO-SQL Database with Firebase</li>
+              <li>Data lake with Google BigQuery</li>
+            </ul>
           </section>
+
           <img
             class="rounded-lg object-cover min-w-0 min-h-0 w-full h-full"
             src="flowerbed.png"
