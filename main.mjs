@@ -2,27 +2,33 @@ import * as THREE from "three";
 
 const canvas = document.getElementById("canvas");
 const canvasPreview = document.getElementById("canvas-preview");
+
 if (canvas) {
   const renderer = new THREE.WebGLRenderer({
     canvas,
     alpha: true,
-    antialias: true,
+    antialias: false,
+    powerPreference: "high-performance",
   });
 
-  renderer.setPixelRatio(window.devicePixelRatio || 1);
+  const scale = 0.5;
+  const rect = canvas.parentElement.getBoundingClientRect();
+  renderer.setSize(rect.width * scale, rect.height * scale, false);
 
   const scene = new THREE.Scene();
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
   const uniforms = {
     u_time: { value: 0 },
-    u_resolution: { value: new THREE.Vector2(canvas.width, canvas.height) },
+    u_resolution: {
+      value: new THREE.Vector2(rect.width * scale, rect.height * scale),
+    },
   };
 
   const fragmentShader = `
     // 3D simplex noise adapted from https://www.shadertoy.com/view/Ws23RD
 
-    precision highp float;
+    precision mediump float;
     uniform float u_time;
     uniform vec2 u_resolution;
 
@@ -153,9 +159,13 @@ if (canvas) {
         vec4 c3 = vec4(.17,.5,1.,a3);
 
         vec4 c = vec4(0.);
-        if (c3.a > 0.3) c = c3;
+        if (c3.a > 0.2) c = c3;
         if (c2.a > 0.4) c = c2;
-        if (c1.a > 0.5) c = c1;
+        if (c1.a > 0.6) c = c1;
+
+        // alternative blending modes:
+        // c = vec4( c1.r , c2.g , c3.b, (c1.a + c2.a + c3.a) / 3.  );
+        // c.a = (c1.a + c2.a + c3.a) / 3.;
 
         gl_FragColor = c;
     }
@@ -177,6 +187,16 @@ if (canvas) {
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
   }
+
+  function onWindowResize() {
+    if (canvas) {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      renderer.setSize(rect.width * scale, rect.height * scale, false);
+    }
+  }
+
+  window.addEventListener("resize", onWindowResize);
+  onWindowResize();
 
   canvasPreview?.remove();
   animate();
