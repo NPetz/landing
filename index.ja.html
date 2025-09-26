@@ -4,10 +4,91 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="language" content="Japanese" />
+    <meta
+      name="description"
+      content="ジュリアーノ・マスッチのフリーランスWeb・モバイル開発サービス。高品質なランディングページ、アプリ、パフォーマンス最適化を最短1週間で提供。無料相談受付中。"
+    />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="ジュリアーノ・マスッチ | フリーランスWeb開発"
+    />
+    <meta
+      property="og:description"
+      content="高品質なランディングページ、アプリ、パフォーマンス最適化を最短1週間で。無料相談可能。"
+    />
+    <meta property="og:image" content="./preview.png" />
+    <meta property="og:url" content="https://giuliano-masucci.dev/ja" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="ジュリアーノ・マスッチ | フリーランスWeb開発"
+    />
+    <meta
+      name="twitter:description"
+      content="高品質なランディングページ、アプリ、パフォーマンス最適化を最短1週間で。"
+    />
+    <meta name="twitter:image" content="./preview.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://giuliano-masucci.dev/ja" />
+    <link rel="alternate" hreflang="en" href="https://giuliano-masucci.dev/" />
+    <link
+      rel="alternate"
+      hreflang="ja"
+      href="https://giuliano-masucci.dev/ja"
+    />
+
     <title>ジュリアーノ・マスッチ || フリーランスソフトウェア開発</title>
 
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./output.css" as="style" />
+    <link rel="preload" href="./preview.png" as="image" />
+
+    <!-- Critical CSS inline (above-the-fold) -->
+    <style>
+      /* Critical CSS for immediate rendering */
+      body {
+        margin: 0;
+        background: #fffbeb;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      .snap-y {
+        scroll-snap-type: y mandatory;
+      }
+      .snap-mandatory {
+        scroll-snap-type: mandatory;
+      }
+      .snap-center {
+        scroll-snap-align: center;
+      }
+      .h-dvh {
+        height: 100dvh;
+      }
+      .overflow-y-scroll {
+        overflow-y: scroll;
+      }
+      .overflow-x-hidden {
+        overflow-x: hidden;
+      }
+      .font-stretch-expanded {
+        font-stretch: expanded;
+      }
+      .bg-amber-50 {
+        background-color: #fffbeb;
+      }
+    </style>
+
     <link href="./output.css" rel="stylesheet" />
-    <link href="./style.ja.css" rel="stylesheet" />
+
+    <!-- Deferred Three.js loading -->
+    <script type="module" src="./performance.js"></script>
+    <script type="module" src="main.mjs" defer></script>
     <script type="importmap">
       {
         "imports": {
@@ -15,7 +96,39 @@
         }
       }
     </script>
-    <script type="module" src="main.mjs"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "ジュリアーノ・マスッチ",
+        "alternateName": "Giuliano Masucci",
+        "jobTitle": "フリーランスソフトウェア開発者",
+        "description": "高品質なランディングページ、モバイルアプリ、Webサイトを最短1週間で提供するフリーランス開発者",
+        "url": "https://giuliano-masucci.dev/ja",
+        "email": "giuliano.masucci@gmail.com",
+        "knowsAbout": [
+          "JavaScript",
+          "TypeScript",
+          "React",
+          "Next.js",
+          "Three.js",
+          "Node.js",
+          "Webパフォーマンス最適化",
+          "モバイルアプリ開発",
+          "ランディングページ最適化"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Web・モバイル開発サービス",
+            "description": "ランディングページ、モバイルアプリ、Webサイトの設計・開発・最適化"
+          }
+        }
+      }
+    </script>
   </head>
 
   <body>
@@ -72,7 +185,7 @@
         <div class="flex flex-col md:grid md:grid-cols-3 gap-8 flex-1 p-4">
           <!-- Mobile app service -->
           <div
-            class="group bg-green-500 rounded-lg p-8 text-white flex flex-col gap-6 shadow transition-all duration-500 hover:shadow-xl hover:shadow-green-600/40 hover:-translate-y-1 hover:scale-[1.015] will-change-transform"
+            class="group bg-green-500 rounded-lg p-8 text-white flex flex-col gap-6 shadow transition-all duration-500 hover:shadow-xl hover:shadow-green-600/40 hover:-translate-y-1 hover:scale-[1.015] hover:will-change-transform"
           >
             <h3 class="text-3xl md:text-4xl font-extrabold uppercase">
               MOBILE
@@ -95,7 +208,7 @@
 
           <!-- Website service -->
           <div
-            class="group bg-red-500 rounded-lg p-8 text-white flex flex-col gap-6 shadow transition-all duration-500 hover:shadow-xl hover:shadow-red-600/40 hover:-translate-y-1 hover:scale-[1.015] will-change-transform"
+            class="group bg-red-500 rounded-lg p-8 text-white flex flex-col gap-6 shadow transition-all duration-500 hover:shadow-xl hover:shadow-red-600/40 hover:-translate-y-1 hover:scale-[1.015] hover:will-change-transform"
           >
             <h3 class="text-3xl md:text-4xl font-extrabold uppercase">
               WEBSITE
@@ -118,7 +231,7 @@
 
           <!-- Maintenance service -->
           <div
-            class="group bg-blue-500 rounded-lg p-8 text-white flex flex-col gap-6 shadow transition-all duration-500 hover:shadow-xl hover:shadow-blue-600/40 hover:-translate-y-1 hover:scale-[1.015] will-change-transform"
+            class="group bg-blue-500 rounded-lg p-8 text-white flex flex-col gap-6 shadow transition-all duration-500 hover:shadow-xl hover:shadow-blue-600/40 hover:-translate-y-1 hover:scale-[1.015] hover:will-change-transform"
           >
             <h3 class="text-3xl md:text-4xl font-extrabold uppercase">
               SUPPORT
@@ -144,11 +257,17 @@
       <section
         class="overflow-hidden snap-center h-dvh p-4 grid relative perspective-distant bg-green-950"
       >
-        <img
-          class="rounded-lg object-cover min-w-0 min-h-0 w-full h-full object-left-top col-start-1 row-start-1 rotate-y-12 -translate-z-40"
-          src="clinic.png"
-          alt="実績例1"
-        />
+        <picture>
+          <source srcset="clinic.avif" type="image/avif" />
+          <source srcset="clinic.webp" type="image/webp" />
+          <img
+            class="rounded-lg object-cover min-w-0 min-h-0 w-full h-full object-left-top col-start-1 row-start-1 rotate-y-12 -translate-z-40"
+            src="clinic.png"
+            alt="実績例1: ソフトウェア会社様のサービスサイト"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
         <h2
           class="absolute bg-blue-500 text-amber-50 p-4 rounded-lg top-8 left-5 -rotate-z-12 text-4xl font-extrabold pb-4 select-none pointer-events-none font-stretch-expanded"
         >
@@ -170,11 +289,17 @@
       <section
         class="overflow-hidden snap-center h-dvh p-4 grid relative perspective-distant bg-blue-950"
       >
-        <img
-          class="rounded-lg object-cover min-w-0 min-h-0 w-full h-full col-start-1 row-start-1 -rotate-y-12 -translate-z-40"
-          src="clinic.png"
-          alt="実績例2"
-        />
+        <picture>
+          <source srcset="clinic.avif" type="image/avif" />
+          <source srcset="clinic.webp" type="image/webp" />
+          <img
+            class="rounded-lg object-cover min-w-0 min-h-0 w-full h-full col-start-1 row-start-1 -rotate-y-12 -translate-z-40"
+            src="clinic.png"
+            alt="実績例2: ECサイトローンチプロジェクト"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
         <h2
           class="absolute bg-red-500 text-amber-50 p-4 rounded-lg top-8 right-5 rotate-z-12 text-4xl font-extrabold pb-4 select-none pointer-events-none font-stretch-expanded"
         >
@@ -195,11 +320,17 @@
       <section
         class="overflow-hidden snap-center h-dvh p-4 grid relative perspective-distant bg-red-950"
       >
-        <img
-          class="rounded-lg object-cover min-w-0 min-h-0 w-full h-full col-start-1 row-start-1 rotate-y-12 -translate-z-40"
-          src="clinic.png"
-          alt="実績例3"
-        />
+        <picture>
+          <source srcset="clinic.avif" type="image/avif" />
+          <source srcset="clinic.webp" type="image/webp" />
+          <img
+            class="rounded-lg object-cover min-w-0 min-h-0 w-full h-full col-start-1 row-start-1 rotate-y-12 -translate-z-40"
+            src="clinic.png"
+            alt="実績例3: パーソナルブランドサイト"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
         <h2
           class="absolute bg-green-500 text-amber-50 p-4 rounded-lg top-8 left-5 -rotate-z-12 text-4xl font-extrabold pb-4 select-none pointer-events-none font-stretch-expanded"
         >
