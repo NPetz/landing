@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.tech-chip {
+  @apply font-bold leading-none bg-white text-black py-4 px-8 rounded-full whitespace-nowrap flex gap-4 justify-center items-center h-min;
+
+  & svg {
+    @apply size-8;
+  }
+}
