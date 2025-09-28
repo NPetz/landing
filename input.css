@@ -47,7 +47,7 @@ body {
 
 /* --- Service Card Component --- */
 .service-card {
-  @apply relative flex flex-col gap-6 p-8 rounded-xl text-white shadow transition-all duration-500 ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-[1.015] hover:will-change-transform;
+  @apply relative min-h-1/2 flex flex-col gap-6 p-8 rounded-xl text-white shadow transition-all duration-500 ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-[1.015] hover:will-change-transform;
 }
 .service-card h3 {
   @apply text-3xl md:text-4xl font-extrabold uppercase;
