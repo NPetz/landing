@@ -19,7 +19,7 @@
       content="高品質なランディングページ、アプリ、パフォーマンス最適化。無料相談可能。"
     />
     <meta property="og:image" content="./preview.png" />
-    <meta property="og:url" content="https://giuliano-masucci.dev/ja" />
+    <meta property="og:url" content="https://giuliano.netflify.app" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
 
@@ -36,13 +36,9 @@
     <meta name="twitter:image" content="./preview.png" />
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://giuliano-masucci.dev/ja" />
-    <link rel="alternate" hreflang="en" href="https://giuliano-masucci.dev/" />
-    <link
-      rel="alternate"
-      hreflang="ja"
-      href="https://giuliano-masucci.dev/ja"
-    />
+    <link rel="canonical" href="https://giuliano.netflify.app" />
+    <link rel="alternate" hreflang="en" href="https://giuliano.netflify.app" />
+    <link rel="alternate" hreflang="ja" href="https://giuliano.netflify.app" />
 
     <title>ジュリアーノ・マスッチ || フリーランスソフトウェア開発</title>
 
@@ -72,7 +68,7 @@
         "alternateName": "Giuliano Masucci",
         "jobTitle": "フリーランスソフトウェア開発者",
         "description": "高品質なランディングページ、モバイルアプリ、Webサイトを提供するフリーランス開発者",
-        "url": "https://giuliano-masucci.dev/ja",
+        "url": "https://giuliano.netflify.app",
         "email": "giuliano.masucci@gmail.com",
         "knowsAbout": [
           "TypeScript",
@@ -98,9 +94,9 @@
     <main
       class="snap-y snap-mandatory h-dvh overflow-y-scroll overflow-x-hidden bg-amber-50 font-stretch-expanded"
     >
-      <!-- Hero Section -->
+      <!-- Hero  -->
       <section
-        class="snap-center overflow-hidden h-dvh p-4 relative flex flex-col gap-4"
+        class="snap-start overflow-hidden h-dvh p-4 relative flex flex-col gap-4"
         id="hero"
       >
         <header class="sticky top-0">
@@ -143,16 +139,34 @@
         </div>
       </section>
 
-      <!-- Services Section -->
+      <!-- Services  -->
       <section
-        class="snap-center overflow-hidden p-4 flex flex-col gap-4"
+        class="snap-start overflow-hidden overflow-y-scroll flex flex-col h-dvh"
         id="services"
+        aria-labelledby="services-heading"
       >
-        <h2 class="text-4xl md:text-6xl font-extrabold p-4 rounded-lg">
-          サービス一覧
-        </h2>
+        <header class="w-full">
+          <div
+            class="w-[100vw] relative left-1/2 right-1/2 -mx-[50vw] bg-black text-white px-6 md:px-12 py-6 md:py-10 flex flex-col gap-3 md:gap-4"
+          >
+            <h2
+              id="services-heading"
+              class="text-2xl md:text-4xl font-extrabold tracking-tight"
+            >
+              提供サービス
+            </h2>
+            <p
+              class="text-xs md:text-sm font-medium text-white/70 max-w-3xl"
+              id="services-subline"
+            >
+              モバイル・ウェブ・保守。必要な範囲を明確にして丁寧に実装します。
+            </p>
+          </div>
+        </header>
 
-        <div class="flex flex-col md:grid md:grid-cols-3 gap-8 flex-1 p-4">
+        <div
+          class="flex flex-col md:grid md:grid-cols-3 gap-8 flex-1 p-4 md:p-8"
+        >
           <!-- Mobile app service -->
           <div
             class="group bg-green-500 rounded-lg p-8 text-white flex flex-col gap-6 shadow transition-all duration-500 hover:shadow-xl hover:shadow-green-600/40 hover:-translate-y-1 hover:scale-[1.015] hover:will-change-transform"
@@ -160,9 +174,7 @@
             <h3 class="text-3xl md:text-4xl font-extrabold uppercase">
               MOBILE
             </h3>
-            <h4 class="text-2xl font-extrabold -mt-2">
-              モバイルアプリ制作 – リリースまで伴走
-            </h4>
+            <h4 class="text-2xl font-extrabold -mt-2">モバイルアプリ制作</h4>
             <div class="space-y-4 text-xl mt-auto text-black font-extrabold">
               <p class="bg-white rounded p-3">iOS・Android対応</p>
               <p class="bg-white rounded p-3">ネイティブ機能実装</p>
@@ -178,9 +190,7 @@
             <h3 class="text-3xl md:text-4xl font-extrabold uppercase">
               WEBSITE
             </h3>
-            <h4 class="text-2xl font-extrabold -mt-2">
-              ウェブサイト制作 – 集客と信頼向上
-            </h4>
+            <h4 class="text-2xl font-extrabold -mt-2">ウェブサイト制作</h4>
             <div class="space-y-4 text-xl mt-auto text-black font-extrabold">
               <p class="bg-white rounded p-3">美しく機能的なデザイン</p>
               <p class="bg-white rounded p-3">高速・最適化された実装</p>
@@ -196,9 +206,7 @@
             <h3 class="text-3xl md:text-4xl font-extrabold uppercase">
               SUPPORT
             </h3>
-            <h4 class="text-2xl font-extrabold -mt-2">
-              保守・改善サービス – 継続的最適化
-            </h4>
+            <h4 class="text-2xl font-extrabold -mt-2">保守・改善サービス</h4>
             <div class="space-y-4 text-xl mt-auto text-black font-extrabold">
               <p class="bg-white rounded p-3">迅速なトラブル対応</p>
               <p class="bg-white rounded p-3">パフォーマンス最適化</p>
@@ -209,308 +217,293 @@
         </div>
       </section>
 
-      <!-- Tech Marquee Section -->
+      <!-- Portfolio -->
       <section
-        id="tech"
-        class="snap-center overflow-hidden py-16 grid bg-amber-100"
+        id="portfolio"
+        class="snap-start flex flex-col"
+        aria-labelledby="portfolio-heading"
       >
-        <h2
-          class="col-start-1 row-start-1 text-4xl md:text-6xl font-extrabold bg-black text-white p-4 py-6 rounded-e-lg w-fit z-10"
-        >
-          使用技術
-        </h2>
+        <header class="w-full">
+          <div
+            class="w-[100vw] relative left-1/2 right-1/2 -mx-[50vw] bg-neutral-900 text-white px-6 md:px-12 py-6 md:py-10 flex flex-col gap-3 md:gap-4"
+          >
+            <h2
+              id="portfolio-heading"
+              class="text-2xl md:text-4xl font-extrabold tracking-tight"
+            >
+              制作サンプル
+            </h2>
+            <p class="text-xs md:text-sm font-medium text-white/70 max-w-3xl">
+              異なる目的 (地域施設 / 個人発信) を想定した軽量デモ例です。
+            </p>
+          </div>
+        </header>
 
         <div
-          class="col-start-1 row-start-1 flex items-center gap-4 animate-[marquee_38s_linear_infinite]"
-          aria-label="Technologies"
+          class="p-6 md:p-10 flex flex-col gap-20 md:gap-24 lg:grid lg:grid-cols-2 lg:items-start lg:gap-16 xl:gap-20"
           role="list"
         >
-          <div class="tech-chip">
-            <img src="./icons/html5.svg" alt="HTML5" class="size-6" />
-            <span>HTML5</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/css3.svg" alt="CSS3" class="size-6" />
-            <span>CSS3</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/typescript.svg" alt="TypeScript" class="size-6" />
-            <span>TypeScript</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/react.svg" alt="React" class="size-6" />
-            <span>React</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/tailwind.svg" alt="Tailwind" class="size-6" />
-            <span>Tailwind</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/threejs.svg" alt="Three.js" class="size-6" />
-            <span>Three.js</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/nextjs.svg" alt="Next.js" class="size-6" />
-            <span>Next.js</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/flutter.svg" alt="Flutter" class="size-6" />
-            <span>Flutter</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/swift.svg" alt="SwiftUI" class="size-6" />
-            <span>SwiftUI</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/fastapi.svg" alt="FastAPI" class="size-6" />
-            <span>FastAPI</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/python.svg" alt="Python" class="size-6" />
-            <span>Python</span>
-          </div>
+          <!-- Clinic Demo -->
+          <article
+            role="listitem"
+            class="relative group flex flex-col items-center"
+          >
+            <figure
+              class="relative aspect-[4/5] md:aspect-[3/4] w-full max-w-[520px] xl:max-w-[560px] mx-auto rounded-xl overflow-hidden shadow-lg ring-1 ring-white/10 bg-neutral-800"
+            >
+              <a
+                href="https://yasashiimori.netlify.app/"
+                target="_blank"
+                rel="noopener"
+                class="absolute inset-0 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-blue-400/60"
+              >
+                <picture class="w-full h-full block">
+                  <source srcset="public/clinic.webp" type="image/webp" />
+                  <img
+                    src="public/clinic.jpg"
+                    alt="地域クリニック案内サイト デモ スクリーン"
+                    class="w-full h-full object-cover object-left-top"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+                <span
+                  class="pointer-events-none absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-[11px] md:text-sm font-extrabold"
+                  >公開サイトを見る ↗</span
+                >
+              </a>
 
-          <!-- Duplicate for seamless loop -->
-          <div class="tech-chip">
-            <img src="./icons/html5.svg" alt="HTML5" class="size-6" />
-            <span>HTML5</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/css3.svg" alt="CSS3" class="size-6" />
-            <span>CSS3</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/typescript.svg" alt="TypeScript" class="size-6" />
-            <span>TypeScript</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/react.svg" alt="React" class="size-6" />
-            <span>React</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/tailwind.svg" alt="Tailwind" class="size-6" />
-            <span>Tailwind</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/threejs.svg" alt="Three.js" class="size-6" />
-            <span>Three.js</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/nextjs.svg" alt="Next.js" class="size-6" />
-            <span>Next.js</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/flutter.svg" alt="Flutter" class="size-6" />
-            <span>Flutter</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/swift.svg" alt="SwiftUI" class="size-6" />
-            <span>SwiftUI</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/fastapi.svg" alt="FastAPI" class="size-6" />
-            <span>FastAPI</span>
-          </div>
-          <div class="tech-chip">
-            <img src="./icons/python.svg" alt="Python" class="size-6" />
-            <span>Python</span>
-          </div>
+              <figcaption class="sr-only">
+                地域クリニック案内サイト デモのスクリーンショット
+              </figcaption>
+            </figure>
+            <div class="relative -mt-12 md:-mt-16 w-full max-w-[460px]">
+              <div
+                class="bg-gradient-to-br from-blue-500 to-blue-600 text-amber-50 rounded-lg p-4 md:p-6 shadow-xl ring-1 ring-blue-300/30"
+              >
+                <span
+                  class="block text-[10px] font-black tracking-wider mb-2 bg-white/15 rounded px-2 py-1 w-fit"
+                  >DEMO 01</span
+                >
+                <h3
+                  class="text-lg md:text-2xl font-extrabold tracking-tight mb-2"
+                >
+                  地域クリニック案内サイト (デモ)
+                </h3>
+                <p
+                  class="text-xs md:text-sm font-semibold leading-relaxed mb-4"
+                >
+                  受診方法・診療時間・アクセスを最小ステップで把握できるシンプル構造。アクセシビリティと可読性を優先した静的構成例です。
+                </p>
+                <a
+                  href="https://yasashiimori.netlify.app/"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-block bg-amber-50 text-black font-extrabold text-[11px] md:text-xs tracking-wide px-4 py-2 rounded shadow hover:shadow-lg hover:-translate-y-0.5 transition"
+                  >デモを開く <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog Demo -->
+          <article
+            role="listitem"
+            class="relative group flex flex-col items-center lg:mt-8"
+          >
+            <figure
+              class="relative aspect-[4/5] md:aspect-[3/4] w-full max-w-[520px] xl:max-w-[560px] mx-auto rounded-xl overflow-hidden shadow-lg ring-1 ring-white/10 bg-neutral-800"
+            >
+              <div
+                class="absolute inset-0 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-green-400/60"
+              >
+                <picture class="w-full h-full block">
+                  <source srcset="public/duck.webp" type="image/webp" />
+                  <img
+                    src="public/duck.jpg"
+                    alt="学生ジャーナリズムブログ デモ スクリーン"
+                    class="w-full h-full object-cover object-left-top"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+                <span
+                  class="pointer-events-none absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-[11px] md:text-sm font-extrabold"
+                  >デモ準備中</span
+                >
+              </div>
+              <figcaption class="sr-only">
+                学生ジャーナリズムブログ デモのスクリーンショット
+              </figcaption>
+            </figure>
+            <div class="relative -mt-12 md:-mt-16 w-full max-w-[460px]">
+              <div
+                class="bg-gradient-to-br from-green-500 to-green-600 text-amber-50 rounded-lg p-4 md:p-6 shadow-xl ring-1 ring-green-300/30"
+              >
+                <span
+                  class="block text-[10px] font-black tracking-wider mb-2 bg-white/15 rounded px-2 py-1 w-fit"
+                  >DEMO 02</span
+                >
+                <h3
+                  class="text-lg md:text-2xl font-extrabold tracking-tight mb-2"
+                >
+                  学生ジャーナリズムブログ (デモ)
+                </h3>
+                <p
+                  class="text-xs md:text-sm font-semibold leading-relaxed mb-4"
+                >
+                  学生が記事・ノート・取材記録を整理しやすい単純レイアウト。読みやすさと投稿継続を支える最低限の要素のみを配置。
+                </p>
+                <span
+                  class="inline-block bg-amber-50/80 text-black font-extrabold text-[11px] md:text-xs tracking-wide px-4 py-2 rounded shadow"
+                  >デモ準備中</span
+                >
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section id="portfolio">
-        <section
-          class="overflow-hidden snap-center h-dvh p-4 grid relative perspective-distant bg-green-950"
-        >
-          <picture
-            class="rounded-lg object-cover min-w-0 min-h-0 w-full h-full object-left-top col-start-1 row-start-1 rotate-y-12 -translate-z-40"
-          >
-            <!-- <source srcset="clinic.avif" type="image/avif" /> -->
-            <!-- <source srcset="clinic.webp" type="image/webp" /> -->
-            <img
-              class="rounded-lg object-cover min-w-0 min-h-0 w-full h-full"
-              src="clinic.png"
-              alt="実績例1: ソフトウェア会社様のサービスサイト"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-          <h2
-            class="absolute bg-blue-500 text-amber-50 p-4 rounded-lg top-8 left-5 -rotate-z-12 text-4xl font-extrabold pb-4 select-none pointer-events-none font-stretch-expanded"
-          >
-            サービス例 #1
-          </h2>
+      <!-- Process  -->
 
-          <div
-            class="z-10 rounded-lg flex flex-col gap-4 bg-red-500 p-4 text-amber-50 col-start-1 row-start-1 self-end justify-self-center md:max-w-1/2 md:self-end md:justify-self-end m-4"
-          >
-            <h3 class="rounded-lg p-2 uppercase text-2xl whitespace-nowrap">
-              ソフトウェア会社様
-            </h3>
-            <p class="rounded-lg p-2 grow text-xl">
-              サービスの特徴がよく分かる、すっきりとした構成。
-            </p>
-          </div>
-        </section>
-
-        <section
-          class="overflow-hidden snap-center h-dvh p-4 grid relative perspective-distant bg-blue-950"
-        >
-          <picture
-            class="rounded-lg object-cover min-w-0 min-h-0 w-full h-full col-start-1 row-start-1 -rotate-y-12 -translate-z-40"
-          >
-            <!-- <source srcset="clinic.avif" type="image/avif" /> -->
-            <!-- <source srcset="clinic.webp" type="image/webp" /> -->
-            <img
-              class="rounded-lg object-cover min-w-0 min-h-0 w-full h-full"
-              src="clinic.png"
-              alt="実績例2: ECサイトローンチプロジェクト"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-          <h2
-            class="absolute bg-red-500 text-amber-50 p-4 rounded-lg top-8 right-5 rotate-z-12 text-4xl font-extrabold pb-4 select-none pointer-events-none font-stretch-expanded"
-          >
-            サービス例 #2
-          </h2>
-          <div
-            class="z-10 rounded-lg flex flex-col gap-4 bg-green-500 p-4 text-amber-50 col-start-1 row-start-1 self-end justify-self-center md:max-w-1/2 md:self-end md:justify-self-start m-4"
-          >
-            <h3 class="rounded-lg p-2 uppercase text-2xl whitespace-nowrap">
-              ECサイトローンチ
-            </h3>
-            <p class="rounded-lg p-2 grow text-xl">
-              商品の魅力を見せる、購入につながる構成です。
-            </p>
-          </div>
-        </section>
-
-        <section
-          class="overflow-hidden snap-center h-dvh p-4 grid relative perspective-distant bg-red-950"
-        >
-          <picture class="col-start-1 row-start-1 rotate-y-12 -translate-z-40">
-            <!-- <source srcset="clinic.avif" type="image/avif" /> -->
-            <!-- <source srcset="clinic.webp" type="image/webp" /> -->
-            <img
-              class="rounded-lg object-cover min-w-0 min-h-0 w-full h-full"
-              src="clinic.png"
-              alt="実績例3: パーソナルブランドサイト"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-          <h2
-            class="absolute bg-green-500 text-amber-50 p-4 rounded-lg top-8 left-5 -rotate-z-12 text-4xl font-extrabold pb-4 select-none pointer-events-none font-stretch-expanded"
-          >
-            サービス例 #3
-          </h2>
-          <div
-            class="z-10 rounded-lg flex flex-col gap-4 bg-blue-500 p-4 text-amber-50 col-start-1 row-start-1 self-end justify-self-center md:max-w-1/2 md:self-end md:justify-self-end m-4"
-          >
-            <h3 class="rounded-lg p-2 uppercase text-2xl whitespace-nowrap">
-              パーソナルブランド
-            </h3>
-            <p class="rounded-lg p-2 grow text-xl">
-              伝えたい想いを丁寧にまとめ、信頼につながる見せ方を作ります。
-            </p>
-          </div>
-        </section>
-      </section>
-
-      <!-- Process Section (Client hiring & delivery flow) -->
       <section
         id="process"
-        class="snap-center h-dvh p-4 flex flex-col gap-6 overflow-hidden"
+        class="snap-start flex flex-col h-dvh gap-8 md:gap-10 overflow-hidden"
+        aria-labelledby="process-heading"
       >
-        <h2
-          class="text-4xl md:text-6xl font-extrabold bg-black text-white p-4 rounded-lg w-fit"
-        >
-          ご依頼の流れ
-        </h2>
-        <div class="relative grow">
+        <header class="w-full">
           <div
-            class="absolute inset-0 pointer-events-none bg-gradient-to-r from-amber-50 via-transparent to-amber-50 [mask-image:linear-gradient(to_right,rgba(0,0,0,0.85),rgba(0,0,0,1)_15%,rgba(0,0,0,1)_85%,rgba(0,0,0,0.85))]"
-          ></div>
-          <div
-            class="h-full flex items-center overflow-x-auto snap-x snap-mandatory gap-8 px-4 [scrollbar-width:none] [-ms-overflow-style:none]"
-            style="scroll-snap-type: x mandatory"
+            class="w-[100vw] relative left-1/2 right-1/2 -mx-[50vw] bg-black px-6 md:px-12 py-6 md:py-10 flex flex-col gap-3 md:gap-4"
           >
-            <div class="flex items-stretch gap-10">
+            <h2
+              id="process-heading"
+              class="text-2xl md:text-4xl font-extrabold tracking-tight text-white"
+            >
+              制作の流れ
+            </h2>
+            <p
+              class="text-xs md:text-sm font-medium text-white/70 max-w-3xl"
+              id="process-subline"
+            >
+              相談 → 見積 → ドラフト → 実装 → 調整 → 公開 → 任意サポート。
+            </p>
+          </div>
+        </header>
+        <div class="relative grow pb-12">
+          <div
+            class="h-full flex items-center overflow-x-auto snap-x snap-mandatory gap-8 md:gap-12 px-2 md:px-4 py-12 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+            style="scroll-snap-type: x mandatory"
+            aria-label="ご依頼の流れ スクロールリスト"
+            role="list"
+          >
+            <div class="flex items-stretch gap-10 md:gap-14 pr-6 md:pr-12">
               <div
-                class="snap-center min-w-[250px] md:min-w-[280px] bg-white rounded-xl p-5 flex flex-col gap-3 shadow"
+                class="group snap-center min-w-[260px] md:min-w-[300px] rounded-2xl p-6 md:p-7 flex flex-col gap-4 shadow bg-green-500 text-white transition-all duration-500 hover:-translate-y-1 hover:scale-[1.035] hover:shadow-2xl hover:shadow-green-600/40 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-green-400/60"
               >
-                <span class="text-xs font-black tracking-wider text-red-600"
+                <span
+                  class="text-[10px] font-black tracking-wider uppercase bg-black/25 rounded px-2 py-1 w-fit"
                   >STEP 1</span
                 >
-                <h3 class="text-lg font-extrabold">初回相談 (無料)</h3>
-                <p class="text-sm font-semibold leading-relaxed">
+                <h3 class="text-lg font-extrabold leading-snug">
+                  初回相談 (無料)
+                </h3>
+                <p
+                  class="text-sm font-semibold leading-relaxed md:leading-loose text-black/90 bg-amber-50/90 rounded p-2 md:p-3"
+                >
                   目的 / 期日 / 想定成果を15〜30分で共有。
                 </p>
               </div>
               <div
-                class="snap-center min-w-[250px] md:min-w-[280px] bg-white rounded-xl p-5 flex flex-col gap-3 shadow"
+                class="group snap-center min-w-[260px] md:min-w-[300px] rounded-2xl p-6 md:p-7 flex flex-col gap-4 shadow bg-red-500 text-white transition-all duration-500 hover:-translate-y-1 hover:scale-[1.035] hover:shadow-2xl hover:shadow-red-600/40 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-red-400/60"
               >
-                <span class="text-xs font-black tracking-wider text-red-600"
+                <span
+                  class="text-[10px] font-black tracking-wider uppercase bg-black/25 rounded px-2 py-1 w-fit"
                   >STEP 2</span
                 >
-                <h3 class="text-lg font-extrabold">簡易要件 & 見積</h3>
-                <p class="text-sm font-semibold leading-relaxed">
+                <h3 class="text-lg font-extrabold leading-snug">
+                  簡易要件 & 見積
+                </h3>
+                <p
+                  class="text-sm font-semibold leading-relaxed md:leading-loose text-black/90 bg-amber-50/90 rounded p-2 md:p-3"
+                >
                   構成案 + 作業範囲 + 固定料金をご提示。
                 </p>
               </div>
               <div
-                class="snap-center min-w-[250px] md:min-w-[280px] bg-white rounded-xl p-5 flex flex-col gap-3 shadow"
+                class="group snap-center min-w-[260px] md:min-w-[300px] rounded-2xl p-6 md:p-7 flex flex-col gap-4 shadow bg-blue-500 text-white transition-all duration-500 hover:-translate-y-1 hover:scale-[1.035] hover:shadow-2xl hover:shadow-blue-600/40 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-blue-400/60"
               >
-                <span class="text-xs font-black tracking-wider text-red-600"
+                <span
+                  class="text-[10px] font-black tracking-wider uppercase bg-black/25 rounded px-2 py-1 w-fit"
                   >STEP 3</span
                 >
-                <h3 class="text-lg font-extrabold">初期ドラフト</h3>
-                <p class="text-sm font-semibold leading-relaxed">
+                <h3 class="text-lg font-extrabold leading-snug">
+                  初期ドラフト
+                </h3>
+                <p
+                  class="text-sm font-semibold leading-relaxed md:leading-loose text-black/90 bg-amber-50/90 rounded p-2 md:p-3"
+                >
                   コピーとセクション構成。方向性を早期確認。
                 </p>
               </div>
               <div
-                class="snap-center min-w-[250px] md:min-w-[280px] bg-white rounded-xl p-5 flex flex-col gap-3 shadow"
+                class="group snap-center min-w-[260px] md:min-w-[300px] rounded-2xl p-6 md:p-7 flex flex-col gap-4 shadow bg-green-500 text-white transition-all duration-500 hover:-translate-y-1 hover:scale-[1.035] hover:shadow-2xl hover:shadow-green-600/40 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-green-400/60"
               >
-                <span class="text-xs font-black tracking-wider text-red-600"
+                <span
+                  class="text-[10px] font-black tracking-wider uppercase bg-black/25 rounded px-2 py-1 w-fit"
                   >STEP 4</span
                 >
-                <h3 class="text-lg font-extrabold">実装プレビュー</h3>
-                <p class="text-sm font-semibold leading-relaxed">
+                <h3 class="text-lg font-extrabold leading-snug">
+                  実装プレビュー
+                </h3>
+                <p
+                  class="text-sm font-semibold leading-relaxed md:leading-loose text-black/90 bg-amber-50/90 rounded p-2 md:p-3"
+                >
                   高速な仮公開URLで動作を確認。
                 </p>
               </div>
               <div
-                class="snap-center min-w-[250px] md:min-w-[280px] bg-white rounded-xl p-5 flex flex-col gap-3 shadow relative"
+                class="group snap-center min-w-[260px] md:min-w-[300px] rounded-2xl p-6 md:p-7 flex flex-col gap-4 shadow bg-red-500 text-white transition-all duration-500 hover:-translate-y-1 hover:scale-[1.035] hover:shadow-2xl hover:shadow-red-600/40 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-red-400/60 relative"
               >
-                <span class="text-xs font-black tracking-wider text-red-600"
+                <span
+                  class="text-[10px] font-black tracking-wider uppercase bg-black/25 rounded px-2 py-1 w-fit"
                   >STEP 5</span
                 >
-                <h3 class="text-lg font-extrabold">無料リビジョン 1回</h3>
-                <p class="text-sm font-semibold leading-relaxed">
+                <h3 class="text-lg font-extrabold leading-snug">
+                  無料リビジョン 1回
+                </h3>
+                <p
+                  class="text-sm font-semibold leading-relaxed md:leading-loose text-black/90 bg-amber-50/90 rounded p-2 md:p-3"
+                >
                   文言 / 配置 / 強調など調整。
                 </p>
               </div>
               <div
-                class="snap-center min-w-[250px] md:min-w-[280px] bg-white rounded-xl p-5 flex flex-col gap-3 shadow"
+                class="group snap-center min-w-[260px] md:min-w-[300px] rounded-2xl p-6 md:p-7 flex flex-col gap-4 shadow bg-blue-500 text-white transition-all duration-500 hover:-translate-y-1 hover:scale-[1.035] hover:shadow-2xl hover:shadow-blue-600/40 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-blue-400/60"
               >
-                <span class="text-xs font-black tracking-wider text-red-600"
+                <span
+                  class="text-[10px] font-black tracking-wider uppercase bg-black/25 rounded px-2 py-1 w-fit"
                   >STEP 6</span
                 >
-                <h3 class="text-lg font-extrabold">公開 & 移管</h3>
-                <p class="text-sm font-semibold leading-relaxed">
+                <h3 class="text-lg font-extrabold leading-snug">公開 & 移管</h3>
+                <p
+                  class="text-sm font-semibold leading-relaxed md:leading-loose text-black/90 bg-amber-50/90 rounded p-2 md:p-3"
+                >
                   本番デプロイ + 基本運用説明。
                 </p>
               </div>
               <div
-                class="snap-center min-w-[250px] md:min-w-[280px] bg-white rounded-xl p-5 flex flex-col gap-3 shadow"
+                class="group snap-center min-w-[260px] md:min-w-[300px] rounded-2xl p-6 md:p-7 flex flex-col gap-4 shadow bg-green-500 text-white transition-all duration-500 hover:-translate-y-1 hover:scale-[1.035] hover:shadow-2xl hover:shadow-green-600/40 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-green-400/60"
               >
-                <span class="text-xs font-black tracking-wider text-red-600"
+                <span
+                  class="text-[10px] font-black tracking-wider uppercase bg-black/25 rounded px-2 py-1 w-fit"
                   >STEP 7</span
                 >
-                <h3 class="text-lg font-extrabold">継続サポート (任意)</h3>
-                <p class="text-sm font-semibold leading-relaxed">
+                <h3 class="text-lg font-extrabold leading-snug">
+                  継続サポート (任意)
+                </h3>
+                <p
+                  class="text-sm font-semibold leading-relaxed md:leading-loose text-black/90 bg-amber-50/90 rounded p-2 md:p-3"
+                >
                   微修正 / ABテスト / 最適化。
                 </p>
               </div>
@@ -524,52 +517,253 @@
         </div>
       </section>
 
-      <!-- Contact Section -->
+      <!-- Tech Stack  -->
+
       <section
-        class="overflow-hidden snap-center h-dvh p-4 grid font-extrabold"
+        id="tech"
+        class="snap-center overflow-hidden py-16 grid bg-amber-100"
+      >
+        <h2
+          class="col-start-1 row-start-1 text-4xl md:text-6xl font-extrabold bg-black text-white p-4 py-6 rounded-e-lg w-fit z-10"
+        >
+          使用技術
+        </h2>
+        <div
+          class="col-start-1 row-start-1 flex items-center gap-4 animate-[marquee_38s_linear_infinite]"
+          aria-label="Technologies"
+          role="list"
+        >
+          <div class="tech-chip">
+            <img src="./icons/html5.svg" alt="HTML5" class="size-6" /><span
+              >HTML5</span
+            >
+          </div>
+          <div class="tech-chip">
+            <img src="./icons/css3.svg" alt="CSS3" class="size-6" /><span
+              >CSS3</span
+            >
+          </div>
+          <div class="tech-chip">
+            <img
+              src="./icons/typescript.svg"
+              alt="TypeScript"
+              class="size-6"
+            /><span>TypeScript</span>
+          </div>
+          <div class="tech-chip">
+            <img src="./icons/react.svg" alt="React" class="size-6" /><span
+              >React</span
+            >
+          </div>
+          <div class="tech-chip">
+            <img
+              src="./icons/tailwind.svg"
+              alt="Tailwind"
+              class="size-6"
+            /><span>Tailwind</span>
+          </div>
+          <div class="tech-chip">
+            <img src="./icons/threejs.svg" alt="Three.js" class="size-6" /><span
+              >Three.js</span
+            >
+          </div>
+          <div class="tech-chip">
+            <img src="./icons/nextjs.svg" alt="Next.js" class="size-6" /><span
+              >Next.js</span
+            >
+          </div>
+          <div class="tech-chip">
+            <img src="./icons/flutter.svg" alt="Flutter" class="size-6" /><span
+              >Flutter</span
+            >
+          </div>
+          <div class="tech-chip">
+            <img src="./icons/swift.svg" alt="SwiftUI" class="size-6" /><span
+              >SwiftUI</span
+            >
+          </div>
+          <div class="tech-chip">
+            <img src="./icons/fastapi.svg" alt="FastAPI" class="size-6" /><span
+              >FastAPI</span
+            >
+          </div>
+          <div class="tech-chip">
+            <img src="./icons/python.svg" alt="Python" class="size-6" /><span
+              >Python</span
+            >
+          </div>
+          <!-- Duplicate for seamless loop -->
+          <div class="tech-chip">
+            <img src="./icons/html5.svg" alt="HTML5" class="size-6" /><span
+              >HTML5</span
+            >
+          </div>
+          <div class="tech-chip">
+            <img src="./icons/css3.svg" alt="CSS3" class="size-6" /><span
+              >CSS3</span
+            >
+          </div>
+          <div class="tech-chip">
+            <img
+              src="./icons/typescript.svg"
+              alt="TypeScript"
+              class="size-6"
+            /><span>TypeScript</span>
+          </div>
+          <div class="tech-chip">
+            <img src="./icons/react.svg" alt="React" class="size-6" /><span
+              >React</span
+            >
+          </div>
+          <div class="tech-chip">
+            <img
+              src="./icons/tailwind.svg"
+              alt="Tailwind"
+              class="size-6"
+            /><span>Tailwind</span>
+          </div>
+          <div class="tech-chip">
+            <img src="./icons/threejs.svg" alt="Three.js" class="size-6" /><span
+              >Three.js</span
+            >
+          </div>
+          <div class="tech-chip">
+            <img src="./icons/nextjs.svg" alt="Next.js" class="size-6" /><span
+              >Next.js</span
+            >
+          </div>
+          <div class="tech-chip">
+            <img src="./icons/flutter.svg" alt="Flutter" class="size-6" /><span
+              >Flutter</span
+            >
+          </div>
+          <div class="tech-chip">
+            <img src="./icons/swift.svg" alt="SwiftUI" class="size-6" /><span
+              >SwiftUI</span
+            >
+          </div>
+          <div class="tech-chip">
+            <img src="./icons/fastapi.svg" alt="FastAPI" class="size-6" /><span
+              >FastAPI</span
+            >
+          </div>
+          <div class="tech-chip">
+            <img src="./icons/python.svg" alt="Python" class="size-6" /><span
+              >Python</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+
+      <section
+        class="overflow-hidden snap-start px-5 md:px-10 py-8 md:py-12 flex flex-col md:flex-row gap-8 md:gap-12 font-extrabold bg-black"
         id="contact"
       >
-        <div class="flex col-start-1 row-start-1 gap-4">
-          <div class="bg-red-500 grow rounded-lg"></div>
-          <div class="bg-green-500 grow rounded-lg"></div>
-          <div class="bg-blue-500 grow rounded-lg"></div>
-        </div>
-        <div
-          class="flex flex-col sm:grid col-start-1 row-start-1 p-4 gap-4 grid-rows-[min-content_1fr_1fr]"
-        >
-          <h3
-            class="col-span-2 p-4 bg-amber-50 text-xl font-extrabold rounded-lg mb-auto sm:mb-0"
-          >
+        <div class="flex flex-col gap-6 md:gap-10 flex-[2] min-h-0">
+          <h3 class="text-white text-3xl md:text-4xl font-extrabold">
             まずは無料相談から
           </h3>
-          <span
-            class="col-span-2 p-4 bg-black text-white font-extrabold rounded-lg grid place-items-center"
-            >giuliano.masucci@gmail.com</span
+
+          <form
+            name="contact-ja"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="mt-0 flex flex-col gap-5 bg-amber-50 rounded-xl p-5 md:p-8 shadow-inner grow"
           >
-          <p
-            class="col-span-2 text-sm font-semibold text-black/80 bg-amber-50 p-4 rounded-lg"
-          >
-            事業課題を共有いただければ、最適な進め方をご提案します。
-          </p>
+            <input type="hidden" name="form-name" value="contact-ja" />
+            <p class="hidden">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+            <div class="flex flex-col gap-1.5 text-black/70">
+              <label for="c-name" class="text-[10px] font-black tracking-wider"
+                >お名前</label
+              >
+              <input
+                id="c-name"
+                name="name"
+                type="text"
+                required
+                class="rounded px-3 py-2 text-sm font-semibold bg-white border border-black/10 focus:outline-none focus:ring-4 focus:ring-green-400/40"
+                placeholder="山田 太郎"
+                autocomplete="name"
+              />
+            </div>
+            <div class="flex flex-col gap-1.5 text-black/70">
+              <label for="c-email" class="text-[10px] font-black tracking-wider"
+                >メール</label
+              >
+              <input
+                id="c-email"
+                name="email"
+                type="email"
+                required
+                class="rounded px-3 py-2 text-sm font-semibold bg-white border border-black/10 focus:outline-none focus:ring-4 focus:ring-green-400/40"
+                placeholder="you@example.com"
+                autocomplete="email"
+              />
+            </div>
+            <div class="flex flex-col gap-1.5 text-black/70">
+              <label
+                for="c-message"
+                class="text-[10px] font-black tracking-wider"
+                >ご相談内容</label
+              >
+              <textarea
+                id="c-message"
+                name="message"
+                rows="4"
+                required
+                class="rounded px-3 py-2 text-sm font-semibold bg-white border border-black/10 focus:outline-none focus:ring-4 focus:ring-green-400/40 resize-y"
+                placeholder="新しいLP制作について相談したい..."
+              ></textarea>
+            </div>
+            <div class="flex flex-wrap items-center gap-5 pt-2">
+              <button
+                type="submit"
+                class="bg-green-500 text-white text-xs md:text-sm font-black tracking-wider px-6 py-3.5 rounded-lg shadow hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-green-400/60"
+              >
+                送信
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="flex md:flex-col gap-4 md:gap-6 flex-1 min-h-0">
           <a
-            class="p-4 bg-black hover:bg-green-500 hover:shadow transition-colors text-white rounded-lg grid place-items-center"
-            href="mailto:giuliano.masucci@gmail.com?subject=お問い合わせ"
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener"
+            class="group flex-1 relative bg-green-500 text-white rounded-xl flex flex-col items-center justify-center gap-2 shadow transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-green-600/40 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-green-400/60 aspect-square md:aspect-auto md:min-h-[120px]"
+            aria-label="GitHub プロフィール"
           >
             <img
               src="./icons/github.svg"
               alt="GitHub"
-              class="fill-white size-20"
+              class="size-10 md:size-12"
+              loading="lazy"
             />
+            <span class="text-[11px] md:text-sm font-extrabold tracking-wide"
+              >GitHub</span
+            >
           </a>
           <a
-            class="p-4 bg-black text-white rounded-lg grid place-items-center"
-            href="mailto:giuliano.masucci@gmail.com?subject=お問い合わせ"
+            href="https://linkedin.com/"
+            target="_blank"
+            rel="noopener"
+            class="group flex-1 relative bg-blue-500 text-white rounded-xl flex flex-col items-center justify-center gap-2 shadow transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-600/40 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-blue-400/60 aspect-square md:aspect-auto md:min-h-[120px]"
+            aria-label="LinkedIn プロフィール"
           >
             <img
               src="./icons/linkedin.svg"
               alt="LinkedIn"
-              class="fill-white size-20"
+              class="size-10 md:size-12"
+              loading="lazy"
             />
+            <span class="text-[11px] md:text-sm font-extrabold tracking-wide"
+              >LinkedIn</span
+            >
           </a>
         </div>
       </section>
