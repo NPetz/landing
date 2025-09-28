@@ -1,0 +1,18 @@
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 0
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), fullscreen=(self), payment=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Resource-Policy: same-origin
+  Origin-Agent-Cluster: ?1
+  Report-To: {"group":"csp-endpoint","max_age":10886400,"endpoints":[{"url":"https://example.invalid/report"}]}
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'; object-src 'none'; upgrade-insecure-requests; report-to csp-endpoint
+
+# Notes:
+# - 'unsafe-inline' kept for Tailwind's inline <style> block. Remove if extracted.
+# - Add external domains (e.g., https://cdnjs.cloudflare.com) if re-enabling import maps or remote scripts.
+# - COEP/COOP enable powerful APIs; remove if embedding cross-origin resources without proper headers.

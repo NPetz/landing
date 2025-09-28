@@ -1,0 +1,11 @@
+# AI / LLM crawler policy
+# This file is a community convention (not a formal standard) to signal disallowing
+# automated AI model training, dataset aggregation, or embedding extraction.
+# Scope: All content under site origin.
+
+User-Agent: *
+Disallow: /
+
+# If you operate an AI crawler and require clarification or wish to request
+# limited permission, contact: giuliano.masucci@gmail.com
+# Note: This notice does not grant any license to copy, process, or store the content.

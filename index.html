@@ -46,25 +46,6 @@
           animation: none !important;
         }
       }
-      .skip-link {
-        position: absolute;
-        left: -999px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      .skip-link:focus {
-        left: 8px;
-        top: 8px;
-        width: auto;
-        height: auto;
-        background: #000;
-        color: #fff;
-        padding: 0.75rem 1rem;
-        border-radius: 0.5rem;
-        z-index: 1000;
-      }
     </style>
 
     <!-- Preload critical resources -->
@@ -116,7 +97,6 @@
   </head>
 
   <body>
-    <a href="#services" class="skip-link">本文へスキップ</a>
     <main
       class="snap-y snap-mandatory h-dvh overflow-y-scroll overflow-x-hidden bg-amber-50 font-stretch-expanded"
     >
@@ -257,8 +237,7 @@
               制作サンプル
             </h2>
             <p class="text-xs md:text-sm font-medium text-white/70 max-w-3xl">
-              異なる目的 (地域施設 / 個人発信)
-              を想定した軽量デモ例です。実際の案件では要件に合わせて調整します。
+              様々な業界・規模のニーズに対応。シンプルなサイトから機能重視まで、お客様の要件に合わせて最適な解決策を提供します。
             </p>
           </div>
         </header>
@@ -693,10 +672,28 @@
           >
             まずは無料相談から
           </h2>
+          <p
+            class="text-xs md:text-sm font-semibold text-white/70 leading-relaxed"
+            data-no-scrape
+          >
+            <span
+              id="eml"
+              class="underline decoration-white/40 hover:decoration-white focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-green-400/60 rounded px-1"
+              data-u="giuliano.masucci"
+              data-d="gmail.com"
+              role="link"
+              tabindex="0"
+              aria-label="メールアドレス (クリックで開く)"
+            ></span>
+            <span aria-hidden="true" class="hidden" id="decoy"
+              >admin@invalid.local</span
+            >
+          </p>
 
           <form
             name="contact-ja"
             method="POST"
+            action="/thank-you"
             data-netlify="true"
             netlify-honeypot="bot-field"
             class="mt-0 flex flex-col gap-5 bg-amber-50 rounded-xl p-5 md:p-8 shadow-inner grow"
@@ -797,5 +794,25 @@
         </div>
       </section>
     </main>
+    <script>
+      // Email obfuscation: build mailto at runtime
+      (function () {
+        const el = document.getElementById("eml");
+        if (!el) return;
+        const user = el.getAttribute("data-u");
+        const dom = el.getAttribute("data-d");
+        const addr = user + "@" + dom;
+        el.textContent = addr;
+        el.addEventListener("click", () => {
+          window.location.href = "mailto:" + addr;
+        });
+        el.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            window.location.href = "mailto:" + addr;
+          }
+        });
+      })();
+    </script>
   </body>
 </html>

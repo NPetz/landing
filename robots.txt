@@ -1,0 +1,6 @@
+# Block all crawlers from indexing any content
+User-agent: *
+Disallow: /
+
+# (Optional) Explicitly reference sitemap (currently intentionally empty)
+Sitemap: https://giuliano.netlify.app/sitemap.xml
