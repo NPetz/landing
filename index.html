@@ -6,7 +6,7 @@
     <meta name="language" content="Japanese" />
     <meta
       name="description"
-      content="ジュリアーノ・マスッチのフリーランスWeb・モバイル開発サービス。高品質なランディングページ、アプリ、パフォーマンス最適化を提供。無料相談受付中。"
+      content="フリーランスのソフトウェア開発者。小さなサイトからモバイルアプリまで、要件を整理して着実に形にします。まずは短い無料相談から。"
     />
 
     <!-- Open Graph -->
@@ -16,10 +16,9 @@
     />
     <meta
       property="og:description"
-      content="高品質なランディングページ、アプリ、パフォーマンス最適化。無料相談可能。"
+      content="小さなサイトからアプリまで。要件整理→実装→公開を伴走。まずは無料相談。"
     />
-    <meta property="og:image" content="./preview.png" />
-    <meta property="og:url" content="https://giuliano.netflify.app" />
+    <meta property="og:url" content="https://giuliano.netlify.app" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
 
@@ -31,20 +30,45 @@
     />
     <meta
       name="twitter:description"
-      content="高品質なランディングページ、アプリ、パフォーマンス最適化。"
+      content="サイト / アプリ開発。要件整理から公開までシンプルに支援。"
     />
-    <meta name="twitter:image" content="./preview.png" />
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://giuliano.netflify.app" />
-    <link rel="alternate" hreflang="en" href="https://giuliano.netflify.app" />
-    <link rel="alternate" hreflang="ja" href="https://giuliano.netflify.app" />
+    <link rel="canonical" href="https://giuliano.netlify.app" />
 
-    <title>ジュリアーノ・マスッチ || フリーランスソフトウェア開発</title>
+    <title>ジュリアーノ・マスッチ｜フリーランスソフトウェア開発</title>
+    <meta name="theme-color" content="#000000" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link rel="icon" href="/public/favicon.png" type="image/png" />
+    <style>
+      @media (prefers-reduced-motion: reduce) {
+        .animate-[marquee_38s_linear_infinite] {
+          animation: none !important;
+        }
+      }
+      .skip-link {
+        position: absolute;
+        left: -999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      .skip-link:focus {
+        left: 8px;
+        top: 8px;
+        width: auto;
+        height: auto;
+        background: #000;
+        color: #fff;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        z-index: 1000;
+      }
+    </style>
 
     <!-- Preload critical resources -->
     <link rel="preload" href="./output.css" as="style" />
-    <link rel="preload" href="./preview.png" as="image" />
 
     <link href="./output.css" rel="stylesheet" />
 
@@ -67,8 +91,9 @@
         "name": "ジュリアーノ・マスッチ",
         "alternateName": "Giuliano Masucci",
         "jobTitle": "フリーランスソフトウェア開発者",
-        "description": "高品質なランディングページ、モバイルアプリ、Webサイトを提供するフリーランス開発者",
-        "url": "https://giuliano.netflify.app",
+        "description": "小規模サイト / ランディングページ / モバイルアプリなどを要件整理から公開まで担当します。",
+        "sameAs": [],
+        "url": "https://giuliano.netlify.app",
         "email": "giuliano.masucci@gmail.com",
         "knowsAbout": [
           "TypeScript",
@@ -91,6 +116,7 @@
   </head>
 
   <body>
+    <a href="#services" class="skip-link">本文へスキップ</a>
     <main
       class="snap-y snap-mandatory h-dvh overflow-y-scroll overflow-x-hidden bg-amber-50 font-stretch-expanded"
     >
@@ -130,12 +156,6 @@
             id="canvas"
           >
           </canvas>
-          <img
-            id="canvas-preview"
-            src="preview.png"
-            alt=""
-            class="w-full h-full col-start-1 row-start-1 rounded-lg"
-          />
         </div>
       </section>
 
@@ -159,7 +179,8 @@
               class="text-xs md:text-sm font-medium text-white/70 max-w-3xl"
               id="services-subline"
             >
-              モバイル・ウェブ・保守。必要な範囲を明確にして丁寧に実装します。
+              モバイル / ウェブ /
+              保守。最初に必要範囲を一緒に整理し、無理のない形で実装します。
             </p>
           </div>
         </header>
@@ -192,8 +213,10 @@
             </h3>
             <h4 class="text-2xl font-extrabold -mt-2">ウェブサイト制作</h4>
             <div class="space-y-4 text-xl mt-auto text-black font-extrabold">
-              <p class="bg-white rounded p-3">美しく機能的なデザイン</p>
-              <p class="bg-white rounded p-3">高速・最適化された実装</p>
+              <p class="bg-white rounded p-3">読みやすく維持しやすい構成</p>
+              <p class="bg-white rounded p-3">
+                初期表示と操作の速さを意識した実装
+              </p>
               <p class="bg-white rounded p-3">WordPress、Shopify等対応</p>
             </div>
             <a href="#contact" class="btn-shimmer"> お問い合わせ </a>
@@ -234,7 +257,8 @@
               制作サンプル
             </h2>
             <p class="text-xs md:text-sm font-medium text-white/70 max-w-3xl">
-              異なる目的 (地域施設 / 個人発信) を想定した軽量デモ例です。
+              異なる目的 (地域施設 / 個人発信)
+              を想定した軽量デモ例です。実際の案件では要件に合わせて調整します。
             </p>
           </div>
         </header>
@@ -321,7 +345,7 @@
                   <source srcset="public/duck.webp" type="image/webp" />
                   <img
                     src="public/duck.jpg"
-                    alt="学生ジャーナリズムブログ デモ スクリーン"
+                    alt="ジャーナリズム専攻学生の個人ブログ デモ スクリーン"
                     class="w-full h-full object-cover object-left-top"
                     loading="lazy"
                     decoding="async"
@@ -333,7 +357,7 @@
                 >
               </div>
               <figcaption class="sr-only">
-                学生ジャーナリズムブログ デモのスクリーンショット
+                ジャーナリズム専攻学生の個人ブログ デモのスクリーンショット
               </figcaption>
             </figure>
             <div class="relative -mt-12 md:-mt-16 w-full max-w-[460px]">
@@ -347,12 +371,12 @@
                 <h3
                   class="text-lg md:text-2xl font-extrabold tracking-tight mb-2"
                 >
-                  学生ジャーナリズムブログ (デモ)
+                  ジャーナリズム専攻学生の個人ブログ (デモ)
                 </h3>
                 <p
                   class="text-xs md:text-sm font-semibold leading-relaxed mb-4"
                 >
-                  学生が記事・ノート・取材記録を整理しやすい単純レイアウト。読みやすさと投稿継続を支える最低限の要素のみを配置。
+                  ジャーナリズムを学ぶ学生が記事や取材メモを整理しやすい素直なレイアウト。読みやすさと更新のしやすさに絞った最小構成です。
                 </p>
                 <span
                   class="inline-block bg-amber-50/80 text-black font-extrabold text-[11px] md:text-xs tracking-wide px-4 py-2 rounded shadow"
@@ -385,7 +409,7 @@
               class="text-xs md:text-sm font-medium text-white/70 max-w-3xl"
               id="process-subline"
             >
-              相談 → 見積 → ドラフト → 実装 → 調整 → 公開 → 任意サポート。
+              相談 → 簡易見積 → ドラフト → 実装 → 調整 → 公開 → 任意サポート。
             </p>
           </div>
         </header>
@@ -426,7 +450,7 @@
                 <p
                   class="text-sm font-semibold leading-relaxed md:leading-loose text-black/90 bg-amber-50/90 rounded p-2 md:p-3"
                 >
-                  構成案 + 作業範囲 + 固定料金をご提示。
+                  簡単な構成案・作業範囲と概算(または固定)料金を提示。
                 </p>
               </div>
               <div
@@ -442,7 +466,7 @@
                 <p
                   class="text-sm font-semibold leading-relaxed md:leading-loose text-black/90 bg-amber-50/90 rounded p-2 md:p-3"
                 >
-                  コピーとセクション構成。方向性を早期確認。
+                  文言とセクション案を共有し方向性を早めに確認。
                 </p>
               </div>
               <div
@@ -458,7 +482,7 @@
                 <p
                   class="text-sm font-semibold leading-relaxed md:leading-loose text-black/90 bg-amber-50/90 rounded p-2 md:p-3"
                 >
-                  高速な仮公開URLで動作を確認。
+                  仮公開URLで実際の動きを確認。
                 </p>
               </div>
               <div
@@ -474,7 +498,7 @@
                 <p
                   class="text-sm font-semibold leading-relaxed md:leading-loose text-black/90 bg-amber-50/90 rounded p-2 md:p-3"
                 >
-                  文言 / 配置 / 強調など調整。
+                  文言 / 配置 / 強調などを1回まとめて調整。
                 </p>
               </div>
               <div
@@ -488,7 +512,7 @@
                 <p
                   class="text-sm font-semibold leading-relaxed md:leading-loose text-black/90 bg-amber-50/90 rounded p-2 md:p-3"
                 >
-                  本番デプロイ + 基本運用説明。
+                  本番に公開し、簡単な運用方法を説明。
                 </p>
               </div>
               <div
@@ -504,7 +528,7 @@
                 <p
                   class="text-sm font-semibold leading-relaxed md:leading-loose text-black/90 bg-amber-50/90 rounded p-2 md:p-3"
                 >
-                  微修正 / ABテスト / 最適化。
+                  必要に応じて微修正や簡単な最適化。
                 </p>
               </div>
             </div>
@@ -660,11 +684,15 @@
       <section
         class="overflow-hidden snap-start px-5 md:px-10 py-8 md:py-12 flex flex-col md:flex-row gap-8 md:gap-12 font-extrabold bg-black"
         id="contact"
+        aria-labelledby="contact-heading"
       >
         <div class="flex flex-col gap-6 md:gap-10 flex-[2] min-h-0">
-          <h3 class="text-white text-3xl md:text-4xl font-extrabold">
+          <h2
+            id="contact-heading"
+            class="text-white text-3xl md:text-4xl font-extrabold"
+          >
             まずは無料相談から
-          </h3>
+          </h2>
 
           <form
             name="contact-ja"
@@ -724,6 +752,7 @@
               <button
                 type="submit"
                 class="bg-green-500 text-white text-xs md:text-sm font-black tracking-wider px-6 py-3.5 rounded-lg shadow hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-green-400/60"
+                aria-label="問い合わせフォームを送信"
               >
                 送信
               </button>
