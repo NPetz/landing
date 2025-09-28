@@ -333,6 +333,22 @@ class PerformanceOptimizer {
     onWindowResize();
 
     canvasPreview?.remove();
+
+    // Fade in canvas & remove loader once first frame rendered
+    const loaderEl = document.getElementById("canvas-loader");
+    const fadeCanvas = this.canvasElement;
+    if (fadeCanvas) {
+      // allow a microtask so CSS can apply initial opacity 0
+      requestAnimationFrame(() => {
+        fadeCanvas.classList.add("ready");
+        if (loaderEl) {
+          loaderEl.classList.add("fade-out");
+          // Remove from DOM after transition to keep DOM clean
+          setTimeout(() => loaderEl.remove(), 900);
+        }
+      });
+    }
+
     animate();
   }
 

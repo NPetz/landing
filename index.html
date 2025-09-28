@@ -77,10 +77,10 @@
 
   <body>
     <main
-      class="snap-y snap-mandatory h-dvh overflow-y-scroll overflow-x-hidden bg-amber-50 font-stretch-expanded"
+      class="lg:snap-y lg:snap-mandatory h-dvh overflow-y-scroll overflow-x-hidden bg-amber-50 font-stretch-expanded"
     >
       <section
-        class="snap-start overflow-hidden h-dvh p-4 relative flex flex-col gap-4"
+        class="lg:snap-start overflow-hidden h-dvh p-4 relative flex flex-col gap-4"
         id="hero"
       >
         <header class="sticky top-0">
@@ -108,17 +108,21 @@
           </h2>
         </header>
 
-        <div class="grow grid min-h-0">
+        <div class="grow grid min-h-0 relative">
+          <div
+            id="canvas-loader"
+            class="canvas-loader"
+            aria-hidden="true"
+          ></div>
           <canvas
-            class="w-full h-full rounded-lg col-start-1 row-start-1 min-h-0"
+            class="w-full h-full rounded-lg col-start-1 row-start-1 min-h-0 fade-canvas"
             id="canvas"
-          >
-          </canvas>
+          ></canvas>
         </div>
       </section>
 
       <section
-        class="snap-start overflow-hidden flex flex-col bg-gradient-to-b from-amber-50 to-amber-100/60 lg:h-dvh"
+        class="lg:snap-start overflow-hidden flex flex-col bg-gradient-to-b from-amber-50 to-amber-100/60 lg:h-dvh"
         id="services"
         aria-labelledby="services-heading"
       >
@@ -182,7 +186,7 @@
 
       <section
         id="portfolio"
-        class="snap-start flex flex-col"
+        class="lg:snap-start flex flex-col"
         aria-labelledby="portfolio-heading"
       >
         <header class="w-full">
@@ -323,7 +327,7 @@
 
       <section
         id="process"
-        class="snap-start flex flex-col h-dvh gap-8 md:gap-10 overflow-hidden"
+        class="lg:snap-start flex flex-col h-dvh gap-8 md:gap-10 overflow-hidden"
         aria-labelledby="process-heading"
       >
         <header class="w-full">
@@ -474,7 +478,7 @@
 
       <section
         id="tech"
-        class="snap-center overflow-hidden py-16 grid bg-amber-100"
+        class="lg:snap-center overflow-hidden py-16 grid bg-amber-100"
       >
         <div
           class="col-start-1 row-start-1 flex items-center gap-4 animate-[marquee_38s_linear_infinite]"
@@ -604,16 +608,16 @@
       </section>
 
       <section
-        class="overflow-hidden snap-start px-5 md:px-10 py-8 md:py-12 flex flex-col md:flex-row gap-8 md:gap-12 font-extrabold bg-black"
+        class="overflow-hidden lg:snap-start px-5 md:px-10 py-8 md:py-12 flex flex-col md:flex-row gap-8 md:gap-12 font-extrabold bg-black"
         id="contact"
         aria-labelledby="contact-heading"
       >
         <div class="flex flex-col gap-6 md:gap-10 flex-[2] min-h-0">
           <h2
             id="contact-heading"
-            class="text-white text-3xl md:text-4xl font-extrabold"
+            class="text-white text-4xl md:text-6xl font-extrabold"
           >
-            まずは気軽に無料相談から
+            まずは無料相談から
           </h2>
           <p
             class="text-xs md:text-sm font-semibold text-white/70 leading-relaxed"

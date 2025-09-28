@@ -87,4 +87,43 @@ textarea:focus-visible,
   .group:hover .btn-shimmer {
     @apply translate-y-0 scale-100 shadow;
   }
+  /* No animation needed for static pixel grid */
+}
+
+/* --- Canvas Loader & Fade (Tailwind) --- */
+@layer components {
+  .canvas-loader {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+    border-radius: 0.75rem;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0.6s linear;
+    background: linear-gradient(135deg, #fffefb 0%, #fde8b5 100%),
+      repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.07) 0 1px,
+        rgba(0, 0, 0, 0) 1px 5px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.05) 0 1px,
+        rgba(0, 0, 0, 0) 1px 5px
+      );
+    background-blend-mode: normal, overlay, overlay;
+    image-rendering: pixelated;
+    opacity: 0.9;
+  }
+  .canvas-loader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .fade-canvas {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .fade-canvas.ready {
+    opacity: 1;
+  }
 }
