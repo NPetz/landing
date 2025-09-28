@@ -1,4 +1,3 @@
-// Performance optimization for Three.js and WebGL
 class PerformanceOptimizer {
   constructor() {
     this.threeLoaded = false;
@@ -8,26 +7,20 @@ class PerformanceOptimizer {
     this.isIdle = false;
   }
 
-  // Defer Three.js loading until interaction or idle
   async initThreeJs() {
     if (this.threeLoaded) return;
 
     try {
-      // Wait for idle or user interaction
       await this.waitForIdleOrInteraction();
 
-      // Dynamic import with fallback
       const THREE = await this.loadThreeWithFallback();
 
-      // Initialize your Three.js scene here
       this.initWebGLScene(THREE);
       this.threeLoaded = true;
 
-      // Setup intersection observer for WebGL pause/resume
       this.setupWebGLObserver();
     } catch (error) {
       console.warn("Three.js loading failed:", error);
-      // Graceful fallback - keep preview image
     }
   }
 
@@ -71,7 +64,6 @@ class PerformanceOptimizer {
   }
 
   async loadThreeWithFallback() {
-    // Try CDN first
     try {
       const module = await import(
         "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.180.0/three.module.min.js"
@@ -80,7 +72,6 @@ class PerformanceOptimizer {
     } catch (cdnError) {
       console.warn("CDN loading failed, trying backup:", cdnError);
 
-      // Fallback to different CDN
       try {
         const module = await import(
           "https://unpkg.com/three@0.180.0/build/three.module.js"
@@ -97,7 +88,6 @@ class PerformanceOptimizer {
     this.canvasElement = document.getElementById("canvas");
     if (!this.canvasElement) return;
 
-    // Hide preview image once WebGL is ready
     const canvasPreview = document.getElementById("canvas-preview");
 
     if (canvasPreview) {
@@ -162,14 +152,13 @@ class PerformanceOptimizer {
         vec3 x2 = x0 - i2 + C.y;
         vec3 x3 = x0 - 0.5;
 
-        // Permutations
+  // Permutations
         vec4 p =
         permute(permute(permute(i.z + vec4(0.0, i1.z, i2.z, 1.0))
                                 + i.y + vec4(0.0, i1.y, i2.y, 1.0))
                                 + i.x + vec4(0.0, i1.x, i2.x, 1.0));
 
-        // Gradients: 7x7 points over a square, mapped onto an octahedron.
-        // The ring size 17*17 = 289 is close to a multiple of 49 (49*6 = 294)
+  // Gradients lattice mapping onto octahedron (condensed)
         vec4 j = p - 49.0 * floor(p / 49.0);  // mod(p,7*7)
 
         vec4 x_ = floor(j / 7.0);
@@ -195,7 +184,7 @@ class PerformanceOptimizer {
         vec3 g2 = vec3(a1.xy, h.z);
         vec3 g3 = vec3(a1.zw, h.w);
 
-        // Compute noise and gradient at P
+  // Noise & gradient at P
         vec4 m = max(0.6 - vec4(dot(x0, x0), dot(x1, x1), dot(x2, x2), dot(x3, x3)), 0.0);
         vec4 m2 = m * m;
         vec4 m3 = m2 * m;
@@ -209,8 +198,7 @@ class PerformanceOptimizer {
         return 42.0 * vec4(grad, dot(m4, px));
     }
 
-    // Based on: https://www.shadertoy.com/view/3d3yRj
-    // See also: KdotJPG's https://www.shadertoy.com/view/wlc3zr
+  // Based on public shadertoy references (condensed)
 
     float water_caustics(vec3 pos) {
         vec4 n = snoise( pos );
@@ -230,10 +218,9 @@ class PerformanceOptimizer {
 
     void main()
     {
-  // Pixelation: quantize fragment coordinates to a grid before computing p
-  // Base pixel size in screen space (adjust as desired). Larger = chunkier pixels.
+  // Pixelation quantization
   float pixelSize = 2.0; // you can tweak or animate this value
-  // Keep pixels roughly square even on HiDPI by working directly in framebuffer coords
+  // HiDPI square pixels
   vec2 pixCoord = floor(gl_FragCoord.xy / pixelSize) * pixelSize + pixelSize * 0.5;
   vec2 p = (-u_resolution.xy + pixCoord) / u_resolution.y;
 
@@ -242,9 +229,9 @@ class PerformanceOptimizer {
         vec3 uu = normalize(cross(ww, vec3(0., 1., 0.)));
         vec3 vv = normalize(cross(uu,ww));
 
-        vec3 rd = p.x*uu + p.y*vv + ww;	// view ray
-        vec3 pos = ww + rd*(ww.y/rd.y);	// raytrace plane
-        pos.y = u_time * 0.02;					// animate noise slice
+  vec3 rd = p.x*uu + p.y*vv + ww; // ray & plane
+  vec3 pos = ww + rd*(ww.y/rd.y);
+  pos.y = u_time * 0.02; // animate
         pos *= .7;							// tiling frequency
 
         float w1 = water_caustics(pos);
@@ -273,11 +260,9 @@ class PerformanceOptimizer {
   // Preserve the original dominant color for later rebalance
   vec3 baseColor = c.rgb;
 
-        // alternative blending modes:
-        // c = vec4( c1.r , c2.g , c3.b, (c1.a + c2.a + c3.a) / 3.  );
-        // c.a = (c1.a + c2.a + c3.a) / 3.;
+  // alt blend examples removed
 
-  // --- Decay trail (temporal echo) ---
+  // Decay trail
   vec3 posTrail = pos;
   posTrail.y -= 0.9 * 0.02; // slightly closer echo than before
   float w1T = water_caustics(posTrail);
@@ -297,21 +282,20 @@ class PerformanceOptimizer {
   if (a3T > 0.2) trailColor = t3;
   if (a2T > 0.4) trailColor = t2;
   if (a1T > 0.6) trailColor = t1;
-  trailColor *= vec3(0.82, 0.87, 0.97); // gentle cool shift
-  // Blend trail subtly to avoid washing out base hue
+  trailColor *= vec3(0.82, 0.87, 0.97); // cool shift
   c.rgb = mix(c.rgb, clamp(c.rgb + trailColor * 0.6, 0.0, 1.0), 0.25);
 
-  // Re-balance toward the original dominant pure shade
+  // Re-balance toward original dominant shade
   c.rgb = mix(c.rgb, baseColor, 0.4);
 
-  // --- CRT mask (restored) ---
+  // CRT mask
   float scan = 0.92 + 0.08 * sin(gl_FragCoord.y * 3.14159);
   float triad = mod(gl_FragCoord.x, 3.0);
   vec3 grille = triad < 1.0 ? vec3(1.02,0.97,0.97) : (triad < 2.0 ? vec3(0.97,1.02,0.97) : vec3(0.97,0.97,1.02));
   vec3 crtMask = grille * scan;
   c.rgb = mix(c.rgb, c.rgb * crtMask, 0.07);
 
-  // --- Vignette ---
+  // Vignette
   vec2 uv_vig = gl_FragCoord.xy / u_resolution.xy;
   float d = distance(uv_vig, vec2(0.5));
   float vig = smoothstep(0.55, 0.9, d);
@@ -360,10 +344,8 @@ class PerformanceOptimizer {
         entries.forEach((entry) => {
           if (entry.target === this.canvasElement) {
             if (entry.isIntersecting && this.webglPaused) {
-              // Resume WebGL rendering
               this.resumeWebGL();
             } else if (!entry.isIntersecting && !this.webglPaused) {
-              // Pause WebGL rendering to save resources
               this.pauseWebGL();
             }
           }
@@ -379,17 +361,14 @@ class PerformanceOptimizer {
 
   pauseWebGL() {
     this.webglPaused = true;
-    // Implement your WebGL pause logic here
     console.log("WebGL paused - saving resources");
   }
 
   resumeWebGL() {
     this.webglPaused = false;
-    // Implement your WebGL resume logic here
     console.log("WebGL resumed");
   }
 
-  // Clean up
   destroy() {
     if (this.intersectionObserver) {
       this.intersectionObserver.disconnect();

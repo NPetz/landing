@@ -9,7 +9,6 @@
       content="フリーランスのソフトウェア開発者。小さなサイトからモバイルアプリまで、要件を整理して着実に形にします。まずは短い無料相談から。"
     />
 
-    <!-- Open Graph -->
     <meta
       property="og:title"
       content="ジュリアーノ・マスッチ | フリーランスWeb開発"
@@ -22,7 +21,6 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -33,38 +31,19 @@
       content="サイト / アプリ開発。要件整理から公開までシンプルに支援。"
     />
 
-    <!-- Canonical -->
     <link rel="canonical" href="https://giuliano.netlify.app" />
 
     <title>ジュリアーノ・マスッチ｜フリーランスソフトウェア開発</title>
     <meta name="theme-color" content="#000000" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="icon" href="/public/favicon.png" type="image/png" />
-    <style>
-      @media (prefers-reduced-motion: reduce) {
-        .animate-[marquee_38s_linear_infinite] {
-          animation: none !important;
-        }
-      }
-    </style>
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="./output.css" as="style" />
+    <link rel="preload" href="./styles.css" as="style" />
 
-    <link href="./output.css" rel="stylesheet" />
+    <link href="./styles.css" rel="stylesheet" />
 
-    <!-- Deferred Three.js loading -->
     <script type="module" src="performance.mjs"></script>
-    <!-- <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.180.0/three.module.min.js"
-        }
-      }
-    </script> -->
-    <!-- <script type="module" src="main.mjs" defer></script> -->
 
-    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -100,7 +79,6 @@
     <main
       class="snap-y snap-mandatory h-dvh overflow-y-scroll overflow-x-hidden bg-amber-50 font-stretch-expanded"
     >
-      <!-- Hero  -->
       <section
         class="snap-start overflow-hidden h-dvh p-4 relative flex flex-col gap-4"
         id="hero"
@@ -139,15 +117,14 @@
         </div>
       </section>
 
-      <!-- Services  -->
       <section
-        class="snap-start overflow-hidden overflow-y-scroll flex flex-col h-dvh"
+        class="snap-start overflow-hidden flex flex-col bg-gradient-to-b from-amber-50 to-amber-100/60 lg:h-dvh"
         id="services"
         aria-labelledby="services-heading"
       >
         <header class="w-full">
           <div
-            class="w-[100vw] relative left-1/2 right-1/2 -mx-[50vw] bg-black text-white px-6 md:px-12 py-6 md:py-10 flex flex-col gap-3 md:gap-4"
+            class="w-[100vw] relative left-1/2 right-1/2 -mx-[50vw] bg-neutral-900 text-white px-6 md:px-12 py-6 md:py-10 flex flex-col gap-3 md:gap-4"
           >
             <h2
               id="services-heading"
@@ -166,61 +143,43 @@
         </header>
 
         <div
-          class="flex flex-col md:grid md:grid-cols-3 gap-8 flex-1 p-4 md:p-8"
+          class="grow flex flex-col md:grid md:grid-cols-3 gap-10 md:gap-12 p-4 md:p-8"
         >
-          <!-- Mobile app service -->
-          <div
-            class="group bg-green-500 rounded-lg p-8 text-white flex flex-col gap-6 shadow transition-all duration-500 hover:shadow-xl hover:shadow-green-600/40 hover:-translate-y-1 hover:scale-[1.015] hover:will-change-transform"
-          >
-            <h3 class="text-3xl md:text-4xl font-extrabold uppercase">
-              MOBILE
-            </h3>
-            <h4 class="text-2xl font-extrabold -mt-2">モバイルアプリ制作</h4>
-            <div class="space-y-4 text-xl mt-auto text-black font-extrabold">
-              <p class="bg-white rounded p-3">iOS・Android対応</p>
-              <p class="bg-white rounded p-3">ネイティブ機能実装</p>
-              <p class="bg-white rounded p-3">ストア公開サポート</p>
+          <div class="service-card bg-green-500">
+            <h3>MOBILE</h3>
+            <h4>モバイルアプリ制作</h4>
+            <div class="service-features">
+              <p class="feature-pill">iOS・Android対応</p>
+              <p class="feature-pill">ネイティブ機能実装</p>
+              <p class="feature-pill">ストア公開サポート</p>
             </div>
             <a href="#contact" class="btn-shimmer"> お問合せへ </a>
           </div>
 
-          <!-- Website service -->
-          <div
-            class="group bg-red-500 rounded-lg p-8 text-white flex flex-col gap-6 shadow transition-all duration-500 hover:shadow-xl hover:shadow-red-600/40 hover:-translate-y-1 hover:scale-[1.015] hover:will-change-transform"
-          >
-            <h3 class="text-3xl md:text-4xl font-extrabold uppercase">
-              WEBSITE
-            </h3>
-            <h4 class="text-2xl font-extrabold -mt-2">ウェブサイト制作</h4>
-            <div class="space-y-4 text-xl mt-auto text-black font-extrabold">
-              <p class="bg-white rounded p-3">読みやすく維持しやすい構成</p>
-              <p class="bg-white rounded p-3">
-                初期表示と操作の速さを意識した実装
-              </p>
-              <p class="bg-white rounded p-3">WordPress、Shopify等対応</p>
+          <div class="service-card bg-red-500">
+            <h3>WEBSITE</h3>
+            <h4>ウェブサイト制作</h4>
+            <div class="service-features">
+              <p class="feature-pill">読みやすく維持しやすい構成</p>
+              <p class="feature-pill">初期表示と操作の速さを意識した実装</p>
+              <p class="feature-pill">WordPress / Shopify 等対応</p>
             </div>
             <a href="#contact" class="btn-shimmer"> お問い合わせ </a>
           </div>
 
-          <!-- Maintenance service -->
-          <div
-            class="group bg-blue-500 rounded-lg p-8 text-white flex flex-col gap-6 shadow transition-all duration-500 hover:shadow-xl hover:shadow-blue-600/40 hover:-translate-y-1 hover:scale-[1.015] hover:will-change-transform"
-          >
-            <h3 class="text-3xl md:text-4xl font-extrabold uppercase">
-              SUPPORT
-            </h3>
-            <h4 class="text-2xl font-extrabold -mt-2">保守・改善サービス</h4>
-            <div class="space-y-4 text-xl mt-auto text-black font-extrabold">
-              <p class="bg-white rounded p-3">迅速なトラブル対応</p>
-              <p class="bg-white rounded p-3">パフォーマンス最適化</p>
-              <p class="bg-white rounded p-3">定期的なメンテナンス</p>
+          <div class="service-card bg-blue-500">
+            <h3>SUPPORT</h3>
+            <h4>保守・改善サービス</h4>
+            <div class="service-features">
+              <p class="feature-pill">迅速なトラブル対応</p>
+              <p class="feature-pill">パフォーマンス最適化</p>
+              <p class="feature-pill">定期的なメンテナンス</p>
             </div>
             <a href="#contact" class="btn-shimmer"> お問い合わせ </a>
           </div>
         </div>
       </section>
 
-      <!-- Portfolio -->
       <section
         id="portfolio"
         class="snap-start flex flex-col"
@@ -242,11 +201,7 @@
           </div>
         </header>
 
-        <div
-          class="p-6 md:p-10 flex flex-col gap-20 md:gap-24 lg:grid lg:grid-cols-2 lg:items-start lg:gap-16 xl:gap-20"
-          role="list"
-        >
-          <!-- Clinic Demo -->
+        <div class="work-grid" role="list">
           <article
             role="listitem"
             class="relative group flex flex-col items-center"
@@ -309,7 +264,6 @@
             </div>
           </article>
 
-          <!-- Blog Demo -->
           <article
             role="listitem"
             class="relative group flex flex-col items-center lg:mt-8"
@@ -367,8 +321,6 @@
         </div>
       </section>
 
-      <!-- Process  -->
-
       <section
         id="process"
         class="snap-start flex flex-col h-dvh gap-8 md:gap-10 overflow-hidden"
@@ -394,8 +346,7 @@
         </header>
         <div class="relative grow pb-12">
           <div
-            class="h-full flex items-center overflow-x-auto snap-x snap-mandatory gap-8 md:gap-12 px-2 md:px-4 py-12 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-            style="scroll-snap-type: x mandatory"
+            class="process-track"
             aria-label="ご依頼の流れ スクロールリスト"
             role="list"
           >
@@ -520,17 +471,10 @@
         </div>
       </section>
 
-      <!-- Tech Stack  -->
-
       <section
         id="tech"
         class="snap-center overflow-hidden py-16 grid bg-amber-100"
       >
-        <h2
-          class="col-start-1 row-start-1 text-4xl md:text-6xl font-extrabold bg-black text-white p-4 py-6 rounded-e-lg w-fit z-10"
-        >
-          使用技術
-        </h2>
         <div
           class="col-start-1 row-start-1 flex items-center gap-4 animate-[marquee_38s_linear_infinite]"
           aria-label="Technologies"
@@ -657,8 +601,6 @@
           </div>
         </div>
       </section>
-
-      <!-- Contact -->
 
       <section
         class="overflow-hidden snap-start px-5 md:px-10 py-8 md:py-12 flex flex-col md:flex-row gap-8 md:gap-12 font-extrabold bg-black"
