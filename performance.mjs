@@ -230,7 +230,12 @@ class PerformanceOptimizer {
 
     void main()
     {
-        vec2 p = ( -u_resolution.xy +  gl_FragCoord.xy) / u_resolution.y;
+  // Pixelation: quantize fragment coordinates to a grid before computing p
+  // Base pixel size in screen space (adjust as desired). Larger = chunkier pixels.
+  float pixelSize = 2.0; // you can tweak or animate this value
+  // Keep pixels roughly square even on HiDPI by working directly in framebuffer coords
+  vec2 pixCoord = floor(gl_FragCoord.xy / pixelSize) * pixelSize + pixelSize * 0.5;
+  vec2 p = (-u_resolution.xy + pixCoord) / u_resolution.y;
 
         // camera matrix
         vec3 ww = normalize(vec3(0., 1., 0.5));
@@ -265,11 +270,54 @@ class PerformanceOptimizer {
         if (c2.a > 0.4) c = c2;
         if (c1.a > 0.6) c = c1;
 
+  // Preserve the original dominant color for later rebalance
+  vec3 baseColor = c.rgb;
+
         // alternative blending modes:
         // c = vec4( c1.r , c2.g , c3.b, (c1.a + c2.a + c3.a) / 3.  );
         // c.a = (c1.a + c2.a + c3.a) / 3.;
 
-        gl_FragColor = c;
+  // --- Decay trail (temporal echo) ---
+  vec3 posTrail = pos;
+  posTrail.y -= 0.9 * 0.02; // slightly closer echo than before
+  float w1T = water_caustics(posTrail);
+  float i1T = exp(w1T);
+  float a1T = smoothstep(0.6, .8, i1T);
+  vec3 t1 = vec3(.98,.17,.21) * a1T;
+  float w2T = water_caustics(posTrail + 1.0);
+  float i2T = exp(w2T);
+  float a2T = smoothstep(0.6, .8, i2T);
+  vec3 t2 = vec3(0.,.79,.32) * a2T;
+  float w3T = water_caustics(posTrail - 1.0);
+  float i3T = exp(w3T);
+  float a3T = smoothstep(0.6, .8, i3T);
+  vec3 t3 = vec3(.17,.5,1.) * a3T;
+  vec3 trailColor = vec3(0.0);
+  // emulate original priority selection but as color mix with low weight
+  if (a3T > 0.2) trailColor = t3;
+  if (a2T > 0.4) trailColor = t2;
+  if (a1T > 0.6) trailColor = t1;
+  trailColor *= vec3(0.82, 0.87, 0.97); // gentle cool shift
+  // Blend trail subtly to avoid washing out base hue
+  c.rgb = mix(c.rgb, clamp(c.rgb + trailColor * 0.6, 0.0, 1.0), 0.25);
+
+  // Re-balance toward the original dominant pure shade
+  c.rgb = mix(c.rgb, baseColor, 0.4);
+
+  // --- CRT mask (restored) ---
+  float scan = 0.92 + 0.08 * sin(gl_FragCoord.y * 3.14159);
+  float triad = mod(gl_FragCoord.x, 3.0);
+  vec3 grille = triad < 1.0 ? vec3(1.02,0.97,0.97) : (triad < 2.0 ? vec3(0.97,1.02,0.97) : vec3(0.97,0.97,1.02));
+  vec3 crtMask = grille * scan;
+  c.rgb = mix(c.rgb, c.rgb * crtMask, 0.07);
+
+  // --- Vignette ---
+  vec2 uv_vig = gl_FragCoord.xy / u_resolution.xy;
+  float d = distance(uv_vig, vec2(0.5));
+  float vig = smoothstep(0.55, 0.9, d);
+  c.rgb *= mix(1.0, 0.58, vig * 0.8);
+
+  gl_FragColor = c;
     }
 `;
 
