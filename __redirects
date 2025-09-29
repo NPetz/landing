@@ -1,0 +1,2 @@
+# Redirect users with Japanese language preference from / to /ja
+/*  /ja/:splat  302  Language=ja
