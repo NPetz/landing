@@ -1,6 +1,6 @@
-# Block all crawlers from indexing any content
+# Allow crawling (public site)
 User-agent: *
-Disallow: /
+Allow: /
 
-# (Optional) Explicitly reference sitemap (currently intentionally empty)
-Sitemap: https://giuliano.netlify.app/sitemap.xml
+# Updated sitemap location
+Sitemap: https://npetz.dev/sitemap.xml
