@@ -44,6 +44,7 @@
     <link rel="preload" href="/styles.css" as="style" />
 
     <link href="/styles.css" rel="stylesheet" />
+    <link href="/cards.css" rel="stylesheet" />
 
     <script type="module" src="/main.mjs"></script>
 
@@ -149,40 +150,42 @@
           </div>
         </header>
 
-        <div
-          class="grow flex flex-col items-center md:grid md:grid-cols-3 gap-10 md:gap-12 p-4 md:p-8"
-        >
-          <div class="service-card bg-green-500">
-            <h3>MOBILE</h3>
-            <h4>モバイルアプリ制作</h4>
-            <div class="service-features">
-              <p class="feature-pill">iOS・Android対応</p>
-              <p class="feature-pill">ネイティブ機能実装</p>
-              <p class="feature-pill">ストア公開サポート</p>
+        <div class="grow grid place-items-center">
+          <div
+            class="grid lg:grid-flow-col auto-rows-fr auto-cols-fr gap-4 p-4 md:gap-8 md:p-8 xl:gap-12 xl:p-12"
+          >
+            <div class="service-card bg-green-500 h-full flex flex-col">
+              <h3>MOBILE</h3>
+              <h4>モバイルアプリ制作</h4>
+              <div class="service-features">
+                <p class="feature-pill">iOS・Android対応</p>
+                <p class="feature-pill">ネイティブ機能実装</p>
+                <p class="feature-pill">ストア公開サポート</p>
+              </div>
+              <a href="#contact" class="btn-shimmer"> お問合せへ </a>
             </div>
-            <a href="#contact" class="btn-shimmer"> お問合せへ </a>
-          </div>
 
-          <div class="service-card bg-red-500">
-            <h3>WEBSITE</h3>
-            <h4>ウェブサイト制作</h4>
-            <div class="service-features">
-              <p class="feature-pill">読みやすく直しやすい構成</p>
-              <p class="feature-pill">表示スピードと操作の軽さ優先</p>
-              <p class="feature-pill">WordPress / Shopify 対応</p>
+            <div class="service-card bg-red-500 h-full flex flex-col">
+              <h3>WEBSITE</h3>
+              <h4>ウェブサイト制作</h4>
+              <div class="service-features">
+                <p class="feature-pill">読みやすく直しやすい構成</p>
+                <p class="feature-pill">表示スピードと操作の軽さ優先</p>
+                <p class="feature-pill">WordPress / Shopify 対応</p>
+              </div>
+              <a href="#contact" class="btn-shimmer"> お問い合わせ </a>
             </div>
-            <a href="#contact" class="btn-shimmer"> お問い合わせ </a>
-          </div>
 
-          <div class="service-card bg-blue-500">
-            <h3>SUPPORT</h3>
-            <h4>保守・改善サービス</h4>
-            <div class="service-features">
-              <p class="feature-pill">トラブルすばやく対応</p>
-              <p class="feature-pill">速度と軽さを調整</p>
-              <p class="feature-pill">定期みなおし</p>
+            <div class="service-card bg-blue-500 h-full flex flex-col">
+              <h3>SUPPORT</h3>
+              <h4>保守・改善サービス</h4>
+              <div class="service-features">
+                <p class="feature-pill">トラブルすばやく対応</p>
+                <p class="feature-pill">速度と軽さを調整</p>
+                <p class="feature-pill">定期みなおし</p>
+              </div>
+              <a href="#contact" class="btn-shimmer"> お問い合わせ </a>
             </div>
-            <a href="#contact" class="btn-shimmer"> お問い合わせ </a>
           </div>
         </div>
       </section>
@@ -489,121 +492,117 @@
           role="list"
         >
           <div class="tech-chip">
-            <img src="./icons/html5.svg" alt="HTML5" class="size-6" /><span
+            <img src="/icons/html5.svg" alt="HTML5" class="size-6" /><span
               >HTML5</span
             >
           </div>
           <div class="tech-chip">
-            <img src="./icons/css3.svg" alt="CSS3" class="size-6" /><span
+            <img src="/icons/css3.svg" alt="CSS3" class="size-6" /><span
               >CSS3</span
             >
           </div>
           <div class="tech-chip">
             <img
-              src="./icons/typescript.svg"
+              src="/icons/typescript.svg"
               alt="TypeScript"
               class="size-6"
             /><span>TypeScript</span>
           </div>
           <div class="tech-chip">
-            <img src="./icons/react.svg" alt="React" class="size-6" /><span
+            <img src="/icons/react.svg" alt="React" class="size-6" /><span
               >React</span
             >
           </div>
           <div class="tech-chip">
-            <img
-              src="./icons/tailwind.svg"
-              alt="Tailwind"
-              class="size-6"
-            /><span>Tailwind</span>
+            <img src="/icons/tailwind.svg" alt="Tailwind" class="size-6" /><span
+              >Tailwind</span
+            >
           </div>
           <div class="tech-chip">
-            <img src="./icons/threejs.svg" alt="Three.js" class="size-6" /><span
+            <img src="/icons/threejs.svg" alt="Three.js" class="size-6" /><span
               >Three.js</span
             >
           </div>
           <div class="tech-chip">
-            <img src="./icons/nextjs.svg" alt="Next.js" class="size-6" /><span
+            <img src="/icons/nextjs.svg" alt="Next.js" class="size-6" /><span
               >Next.js</span
             >
           </div>
           <div class="tech-chip">
-            <img src="./icons/flutter.svg" alt="Flutter" class="size-6" /><span
+            <img src="/icons/flutter.svg" alt="Flutter" class="size-6" /><span
               >Flutter</span
             >
           </div>
           <div class="tech-chip">
-            <img src="./icons/swift.svg" alt="SwiftUI" class="size-6" /><span
+            <img src="/icons/swift.svg" alt="SwiftUI" class="size-6" /><span
               >SwiftUI</span
             >
           </div>
           <div class="tech-chip">
-            <img src="./icons/fastapi.svg" alt="FastAPI" class="size-6" /><span
+            <img src="/icons/fastapi.svg" alt="FastAPI" class="size-6" /><span
               >FastAPI</span
             >
           </div>
           <div class="tech-chip">
-            <img src="./icons/python.svg" alt="Python" class="size-6" /><span
+            <img src="/icons/python.svg" alt="Python" class="size-6" /><span
               >Python</span
             >
           </div>
           <!-- Duplicate for seamless loop -->
           <div class="tech-chip">
-            <img src="./icons/html5.svg" alt="HTML5" class="size-6" /><span
+            <img src="/icons/html5.svg" alt="HTML5" class="size-6" /><span
               >HTML5</span
             >
           </div>
           <div class="tech-chip">
-            <img src="./icons/css3.svg" alt="CSS3" class="size-6" /><span
+            <img src="/icons/css3.svg" alt="CSS3" class="size-6" /><span
               >CSS3</span
             >
           </div>
           <div class="tech-chip">
             <img
-              src="./icons/typescript.svg"
+              src="/icons/typescript.svg"
               alt="TypeScript"
               class="size-6"
             /><span>TypeScript</span>
           </div>
           <div class="tech-chip">
-            <img src="./icons/react.svg" alt="React" class="size-6" /><span
+            <img src="/icons/react.svg" alt="React" class="size-6" /><span
               >React</span
             >
           </div>
           <div class="tech-chip">
-            <img
-              src="./icons/tailwind.svg"
-              alt="Tailwind"
-              class="size-6"
-            /><span>Tailwind</span>
+            <img src="/icons/tailwind.svg" alt="Tailwind" class="size-6" /><span
+              >Tailwind</span
+            >
           </div>
           <div class="tech-chip">
-            <img src="./icons/threejs.svg" alt="Three.js" class="size-6" /><span
+            <img src="/icons/threejs.svg" alt="Three.js" class="size-6" /><span
               >Three.js</span
             >
           </div>
           <div class="tech-chip">
-            <img src="./icons/nextjs.svg" alt="Next.js" class="size-6" /><span
+            <img src="/icons/nextjs.svg" alt="Next.js" class="size-6" /><span
               >Next.js</span
             >
           </div>
           <div class="tech-chip">
-            <img src="./icons/flutter.svg" alt="Flutter" class="size-6" /><span
+            <img src="/icons/flutter.svg" alt="Flutter" class="size-6" /><span
               >Flutter</span
             >
           </div>
           <div class="tech-chip">
-            <img src="./icons/swift.svg" alt="SwiftUI" class="size-6" /><span
+            <img src="/icons/swift.svg" alt="SwiftUI" class="size-6" /><span
               >SwiftUI</span
             >
           </div>
           <div class="tech-chip">
-            <img src="./icons/fastapi.svg" alt="FastAPI" class="size-6" /><span
+            <img src="/icons/fastapi.svg" alt="FastAPI" class="size-6" /><span
               >FastAPI</span
             >
           </div>
           <div class="tech-chip">
-            <img src="./icons/python.svg" alt="Python" class="size-6" /><span
+            <img src="/icons/python.svg" alt="Python" class="size-6" /><span
               >Python</span
             >
           </div>
@@ -715,7 +714,7 @@
             aria-label="GitHub プロフィール"
           >
             <img
-              src="./icons/github.svg"
+              src="/icons/github.svg"
               alt="GitHub"
               class="size-10 md:size-12"
               loading="lazy"
@@ -732,7 +731,7 @@
             aria-label="LinkedIn プロフィール"
           >
             <img
-              src="./icons/linkedin.svg"
+              src="/icons/linkedin.svg"
               alt="LinkedIn"
               class="size-10 md:size-12"
               loading="lazy"
