@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	<url>
+		<loc>https://npetz.dev/</loc>
+		<xhtml:link rel="alternate" hreflang="en" href="https://npetz.dev/" />
+		<xhtml:link rel="alternate" hreflang="ja" href="https://npetz.dev/ja" />
+		<xhtml:link rel="alternate" hreflang="it" href="https://npetz.dev/it" />
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://npetz.dev/" />
+		<priority>1.0</priority>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>https://npetz.dev/ja</loc>
+		<xhtml:link rel="alternate" hreflang="en" href="https://npetz.dev/" />
+		<xhtml:link rel="alternate" hreflang="ja" href="https://npetz.dev/ja" />
+		<xhtml:link rel="alternate" hreflang="it" href="https://npetz.dev/it" />
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://npetz.dev/" />
+		<priority>1.0</priority>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>https://npetz.dev/it</loc>
+		<xhtml:link rel="alternate" hreflang="en" href="https://npetz.dev/" />
+		<xhtml:link rel="alternate" hreflang="ja" href="https://npetz.dev/ja" />
+		<xhtml:link rel="alternate" hreflang="it" href="https://npetz.dev/it" />
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://npetz.dev/" />
+		<priority>1.0</priority>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>https://npetz.dev/thank-you</loc>
+		<priority>0.1</priority>
+		<changefreq>yearly</changefreq>
+	</url>
+	<url>
+		<loc>https://npetz.dev/ja/thank-you</loc>
+		<priority>0.1</priority>
+		<changefreq>yearly</changefreq>
+	</url>
+	<url>
+		<loc>https://npetz.dev/it/thank-you</loc>
+		<priority>0.1</priority>
+		<changefreq>yearly</changefreq>
+	</url>
+</urlset>

@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.tech-chip {
+  @apply font-bold leading-none bg-white text-black py-4 px-8 rounded-full whitespace-nowrap flex gap-4 justify-center items-center h-min;
+
+  & svg {
+    @apply size-8;
+  }
+}
+.btn-shimmer {
+  @apply relative overflow-hidden isolate text-white p-4 rounded-lg font-bold bg-black/80 shadow-inner shadow-black/40  transition-all duration-500 ease-out will-change-transform;
+}
+
+.btn-shimmer::after {
+  content: "";
+  @apply absolute inset-0 rounded-[inherit] bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-140%] transition-transform duration-600 ease-out;
+}
+
+.group:hover .btn-shimmer {
+  @apply bg-gradient-to-br from-black/90 to-zinc-800 -translate-y-px scale-[1.015] ring-white/20 shadow-lg shadow-black/60;
+}
+
+.group:hover .btn-shimmer::after {
+  @apply translate-x-[140%];
+}
+
+/* --- Global Typography & Base Enhancements --- */
+html {
+  @apply antialiased;
+}
+body {
+  @apply leading-relaxed tracking-wide text-[15px] md:text-base;
+}
+
+/* --- Feature Pill --- */
+.feature-pill {
+  @apply bg-white rounded-lg px-4 py-3 md:px-5 md:py-3.5 font-semibold text-black text-sm md:text-base shadow-sm leading-snug;
+}
+
+/* --- Service Card Component --- */
+.service-card {
+  @apply relative flex flex-col gap-6 p-8 rounded-xl text-white shadow transition-all duration-500 ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-[1.015] hover:will-change-transform;
+}
+.service-card h3 {
+  @apply text-3xl md:text-4xl font-extrabold uppercase;
+}
+.service-card h4 {
+  @apply text-2xl font-extrabold -mt-2;
+}
+.service-features {
+  @apply flex flex-col gap-3 mt-auto text-black font-semibold;
+}
+
+/* --- Work Grid Layout --- */
+.work-grid {
+  @apply p-8 md:p-12 flex flex-col gap-20 md:gap-28 lg:grid lg:grid-cols-2 lg:items-start lg:gap-20;
+}
+
+/* --- Horizontal Scroll Track (Process) --- */
+.process-track {
+  @apply h-full flex items-center overflow-x-auto snap-x snap-mandatory gap-8 md:gap-12 px-3 md:px-5 py-14 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden;
+}
+
+/* --- Focus Styles --- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible {
+  @apply outline-none ring-4 ring-green-400/60 ring-offset-2 rounded;
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .animate-[marquee_38s_linear_infinite] {
+    animation: none !important;
+  }
+  .service-card:hover,
+  .group:hover .btn-shimmer {
+    @apply translate-y-0 scale-100 shadow;
+  }
+}
+
+@layer components {
+  .canvas-loader {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+    border-radius: 0.75rem;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0.6s linear;
+    background: linear-gradient(135deg, #fffefb 0%, #fde8b5 100%),
+      repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.07) 0 1px,
+        rgba(0, 0, 0, 0) 1px 5px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.05) 0 1px,
+        rgba(0, 0, 0, 0) 1px 5px
+      );
+    background-blend-mode: normal, overlay, overlay;
+    image-rendering: pixelated;
+    opacity: 0.9;
+  }
+  .canvas-loader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .fade-canvas {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .fade-canvas.ready {
+    opacity: 1;
+  }
+}

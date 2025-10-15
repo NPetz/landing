@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You | Giuliano Masucci</title>
+    <meta name="robots" content="noindex,follow" />
+    <meta
+      name="description"
+      content="Thanks for reaching out! I'll get back to you within 24 hours with a detailed response."
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" href="/public/favicon.png" type="image/png" />
+    <link rel="alternate" href="https://npetz.dev/thank-you" hreflang="en" />
+    <link rel="alternate" href="https://npetz.dev/ja/thank-you" hreflang="ja" />
+    <link rel="alternate" href="https://npetz.dev/it/thank-you" hreflang="it" />
+    <link
+      rel="alternate"
+      href="https://npetz.dev/thank-you"
+      hreflang="x-default"
+    />
+    <link rel="preload" href="/styles.css" as="style" />
+    <link href="/styles.css" rel="stylesheet" />
+  </head>
+  <body
+    class="bg-amber-50 font-stretch-expanded min-h-dvh flex items-center justify-center px-4 py-10"
+  >
+    <main class="w-full max-w-2xl">
+      <div
+        class="bg-white/90 backdrop-blur rounded-2xl shadow-xl ring-1 ring-black/5 p-6 md:p-10 flex flex-col gap-6 md:gap-8"
+      >
+        <header class="flex flex-col gap-4 text-center">
+          <h1
+            class="text-3xl md:text-5xl font-extrabold tracking-tight text-black"
+          >
+            Thank You
+          </h1>
+          <p
+            class="text-sm md:text-base font-semibold text-black/70 leading-relaxed"
+          >
+            Got it! I'll get back to you within
+            <strong class="font-extrabold text-black">24 hours</strong> with a
+            detailed response.<br class="hidden md:block" />
+            If you don't hear from me within 48 hours, please send a quick
+            follow-up.
+          </p>
+        </header>
+        <section class="grid gap-4 md:gap-5">
+          <h2 class="text-base font-black tracking-wide text-black/70">
+            What's Next
+          </h2>
+          <ul
+            class="grid gap-2 text-[11px] md:text-xs font-semibold"
+            aria-label="Next steps list"
+          >
+            <li
+              class="rounded-lg bg-green-500/90 text-white px-4 py-2 font-extrabold"
+            >
+              I'm reviewing your request and preparing a personalized response
+            </li>
+            <li
+              class="rounded-lg bg-blue-500/90 text-white px-4 py-2 font-extrabold"
+            >
+              You'll receive a quote and timeline details
+            </li>
+            <li
+              class="rounded-lg bg-red-500/90 text-white px-4 py-2 font-extrabold"
+            >
+              If it's a good fit, we'll start with a detailed brief
+            </li>
+          </ul>
+        </section>
+        <section
+          class="flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm font-semibold text-black/60"
+          data-no-scrape
+        >
+          <span class="flex items-center gap-1"
+            >Email:
+            <span
+              id="ty-email"
+              data-u="giuliano.masucci"
+              data-d="gmail.com"
+              class="underline cursor-pointer"
+              role="link"
+              tabindex="0"
+              aria-label="Email address (click to open)"
+            ></span
+          ></span>
+          <a href="/" class="btn-shimmer text-xs md:text-sm">Back to Home</a>
+        </section>
+        <footer
+          class="pt-2 text-[10px] font-semibold text-black/50 text-center"
+        >
+          <p>&copy; <span id="y"></span> Giuliano Masucci</p>
+        </footer>
+      </div>
+    </main>
+    <script>
+      (function () {
+        const y = document.getElementById("y");
+        if (y) y.textContent = new Date().getFullYear();
+        const em = document.getElementById("ty-email");
+        if (em) {
+          const u = em.dataset.u,
+            d = em.dataset.d,
+            addr = u + "@" + d;
+          em.textContent = addr;
+          const go = () => (window.location.href = "mailto:" + addr);
+          em.addEventListener("click", go);
+          em.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              go();
+            }
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

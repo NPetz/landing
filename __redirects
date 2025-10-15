@@ -1,0 +1,3 @@
+# Redirect users with Japanese and Italian language
+/*  /ja/:splat  302  Language=ja
+/*  /it/:splat  302  Language=it

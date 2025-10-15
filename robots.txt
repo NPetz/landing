@@ -1,0 +1,6 @@
+# Allow crawling (public site)
+User-agent: *
+Allow: /
+
+# Updated sitemap location
+Sitemap: https://npetz.dev/sitemap.xml
